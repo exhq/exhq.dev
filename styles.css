@@ -96,6 +96,20 @@ html, body {
     animation: colorchange 5s infinite alternate;
 }
 
+.being{
+    margin-left: 11%;
+    font-family: 'fira sans';
+    color: #ff2674;
+    font-size: 120%
+}
+
+.goimg{
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+    margin-left: 10%;
+}
+
 @keyframes colorchange {
     0% {
       color: #16171a;

@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Google+Sans&display=swap');
+/* make the scrolling smooth */
+html, body {
+  scroll-behavior: smooth;
+}
+.header{
+    color: #202124;
+    padding: 10px;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'google sans', serif;
+    animation: colorchange 7s infinite alternate;
+}
+.java{
+    vertical-align: middle;
+    font-size: 10px;
+}
+.javaimg{
+    margin-left: 10%;
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+}
+.topnav {
+    /* make the navbar follow the scroll */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin: auto;
+    width: 100%;
+    overflow: hidden;
+    background-color: #202124;
+    border-bottom: 1px solid #202124;
+    border-top: 1px solid #202124;
+    border-left: 1px solid #202124;
+    border-right: 1px solid #202124;
+    box-shadow: 0px 0px 10px #202124;
+    z-index: 1;
+    background-color: #333;
+    overflow: hidden;
+    width: 100%;
+}
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: "google sans";
+    font-size: 15px;
+  }
+
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  .topnav a.active {
+    background-color: #ff80a4;
+    color: white;
+  }
+
+.java{
+    width: 5%;
+    font-family: 'fira sans', serif;
+    color: #ff80a4;
+    padding: 10px;
+    font-size: 40px;
+    font-weight: bold;
+    margin-left: 10%;
+    margin-top: 30px;
+}
+
+.notjava{
+    margin-left: 3%;
+    font-family: 'fira sans';
+    color: #ff2674;
+}
+
+.data{
+    font-family: 'fira sans', serif;
+    color: #ff80a4;
+    padding: 10px;
+    font-size: 40px;
+    font-weight: bold;
+    margin-left: 10%;
+    margin-top: 30px;
+}
+.header span::before{
+    content: "does ";
+    color: #fff;
+    animation: colorchange 5s infinite alternate;
+}
+
+@keyframes colorchange {
+    0% {
+      color: #16171a;
+    }
+    10% {
+      color: #7f0622;
+    }
+    20% {
+      color: #d62411;
+    }
+    30% {
+      color: #ff8426;
+    }
+    40% {
+      color: #ffd100;
+    }
+    50% {
+      color: #fafdff;
+    }
+    60% {
+      color: #ff80a4;
+    }
+    70% {
+      color: #ff2674;
+    }
+    80% {
+      color: #94216a;
+    }
+    90% {
+      color: #234975;
+    }
+    100% {
+      color: pink;
+    }
+  }
+.mebeinguseless{
+    color: #ff80a4;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.me{
+    /* set the image to be half the width of the screen */
+    width: 50%;
+    /*center the image horizontally */
+    margin-left: 25%;
+    /*make the image 25% smaller */
+    transform: scale(0.75);
+
+    margin-bottom: -60px
+ 
+
+}
+
+html{
+    background-color: #202124;
+}

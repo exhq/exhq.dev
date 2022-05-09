@@ -24,6 +24,14 @@ html, body {
     height: 50px;
     vertical-align: middle;
 }
+
+.rustimg{
+    margin-left: 2.6%;
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+}
+
 .topnav {
     /* make the navbar follow the scroll */
     position: fixed;

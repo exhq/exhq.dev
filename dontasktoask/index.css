@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+html{
+background-color: #36393f;
+}
+.img{
+    margin-left: -0.5%;
+    width: 40%;
+    height: auto;
+}
+h1{
+    font-family: 'Roboto', cursive;
+    font-weight: 900;
+    color: #ffffff;
+}
+.text{
+    /* put text to the right of the image */
+    margin-left: 40%;
+    margin-top: -30%;
+    /*make the text centered*/
+    text-align: center;
+
+
+}

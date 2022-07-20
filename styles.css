@@ -126,6 +126,7 @@ html, body {
     margin-top: 30px;
 }
 .header span::before{
+  pointer-events: all;
     content: "does ";
     color: #fff;
     animation: colorchange 5s infinite alternate;
@@ -269,4 +270,9 @@ color: #ff80a4;
 
 html{
     background-color: #202124;
+}
+
+.go{
+  font-weight: 9000;
+  font-size: 120%;
 }

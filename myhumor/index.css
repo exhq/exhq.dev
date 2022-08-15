@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Google+Sans&display=swap');
+
+:root{
+    --title-color: #ff80a4;
+    --text-color: #ff2674;
+    --background-color: #202124;
+    --nav-background-color: #333;
+}
+h2{
+    text-align: center;
+    color: var(--title-color);
+    font-family: 'fira sans', serif;
+}
+
+.headeridfk{
+    text-align: center;
+    color: var(--title-color);
+    font-family: 'fira sans', serif;
+}
+
+html, body{
+    scroll-behavior: smooth;
+    background-color: var(--background-color);
+}
+
+p{
+    font-family: 'google sans';
+    color: var(--text-color);
+    font-size: larger;
+}
+
+.fuckingcentered{
+    margin: 0 auto;
+    margin-top: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+b{
+    color: #ffd100;
+    font-size: larger;
+}

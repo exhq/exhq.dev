@@ -33,11 +33,10 @@ p{
 
 .fuckingcentered{
     margin: 0 auto;
-    margin-top: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin-top: 150%;
+    margin-left: 3%;
+    margin-right: 3%;
+    
 }
 
 b{

@@ -275,9 +275,29 @@ html{
   font-size: 120%;
 }
 
+/* disable pointer events on images */
+img{
+  pointer-events:none;
+}
 
 .languages-wrapper{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, 1fr);
+}
+
+.jsimg {
+  margin-left: 10%;
+}
+
+@media only screen and (max-width: 900px) {
+  /* .data{
+      margin-left: 0
+  } */
+  .javaimg{
+      margin-left: 0;
+  }
+  .jsimg {
+    margin-left: 0;
+  }
 }

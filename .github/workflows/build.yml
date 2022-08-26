@@ -10,9 +10,10 @@ jobs:
       - uses: actions/setup-java@v1
         with:
           java-version: 8
-      - run: |
-          cd console
-          ./gradlew build
+      - uses: gradle/gradle-build-action@v2
+        with:
+          arguments: build
+          build-root-directory: console
       - run: |
           mkdir dist
           cp -r static/* dist

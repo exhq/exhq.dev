@@ -1,0 +1,29 @@
+
+on: push
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-java@v1
+        with:
+          java-version: 8
+      - uses: gradle/gradle-build-action@v2
+        with:
+          arguments: build
+          build-root-directory: console
+      - run: |
+          mkdir dist
+          cp -r static/* dist
+          mkdir dist/beta
+          cp -r console/build/distributions/* dist/beta
+      - uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/main' }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          cname: exhq.gay
+
+

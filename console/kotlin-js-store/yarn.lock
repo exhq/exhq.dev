@@ -149,6 +149,11 @@
   resolved "https://registry.yarnpkg.com/@emotion/unitless/-/unitless-0.7.5.tgz#77211291c1900a700b8a78cfafda3160d76949ed"
   integrity sha512-OWORNpfjMsSSUBVrRBVGECkhWcULOAJz9ZW8uK9qgxD+87M7jHRcvh/A96XXNhXTLmKcoYSQtBEX7lHMO7YRwg==
 
+"@fontsource/comic-mono@^4.5.0":
+  version "4.5.3"
+  resolved "https://registry.yarnpkg.com/@fontsource/comic-mono/-/comic-mono-4.5.3.tgz#74be41d04fe5a828e510f0b45b3236fbb31ffc14"
+  integrity sha512-5sQvhqC7zFNwsozVRePHEli1Cy+fDVjeFp3xMmWrNs7uwy6FMkxCdWFnDDoPLvUl3whGaGsywa/FcQMDrcy4+Q==
+
 "@jridgewell/gen-mapping@^0.3.0", "@jridgewell/gen-mapping@^0.3.2":
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/@jridgewell/gen-mapping/-/gen-mapping-0.3.2.tgz#c1aedc61e853f2bb9f5dfe6d4442d3b565b253b9"

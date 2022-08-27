@@ -1,5 +1,6 @@
 plugins {
     kotlin("multiplatform") version "1.7.10"
+
 }
 
 repositories {
@@ -21,6 +22,7 @@ kotlin {
     sourceSets.named("jsMain") {
         dependencies {
             implementation("com.github.romangraef:neamoe:36374a0")
+            implementation(npm("@fontsource/comic-mono", "^4.5.0"))
         }
     }
 }

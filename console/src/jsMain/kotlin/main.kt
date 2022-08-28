@@ -74,6 +74,17 @@ fun main() {
                                         &#(#/#((((((((#                         
         """.trimIndent())
     })
-
+    console.registerCommand(command("sudo"){
+        var str = ""
+       for (e in args){
+           str += "$e "
+       }
+       if(str == "rm -rf /* " || str == "rm -rf / "){
+           console.addLine("haha funny xd im laughing so hard rn lmfao xddddddddddddd HAHAHAHAHAHAH")
+       }
+        else{
+            console.addLine("bro you don have the password smh")
+       }
+    })
 
 }

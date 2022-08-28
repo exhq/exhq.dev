@@ -44,5 +44,36 @@ fun main() {
     console.registerCommand(defaultCdCommand("cd"))
     console.registerCommand(defaultCatCommand("cat"))
     console.registerCommand(defaultCwdCommand("cwd", "pwd"))
+    console.registerCommand(command("help", "?"){
+        console.addMultilineText("""
+            ls - lists stuff in current directory
+            cd - move to another directory
+            cat - open files
+            pwd - shows current directory
+        """.trimIndent())
+
+    })
+    console.registerCommand(command("blahaj", "shark"){
+        console.addMultilineText("""
+                                          ,(((/                                 
+                                        /(((((                                  
+                                       ((((#((                              (// 
+                                      (((((((.                           *(((/  
+                                    /(######/                          *((((/   
+                                 *//%#####((/                         ((#((/    
+               ,*/********/////////////////(//*           (%*      ,((##((      
+      ,*/((///(//////////((/(///////(/////(////*,(*#((/(/((//////###(###(/(     
+   /(((((((//((///((////((((((/(((((((((((((((((/(((##((#%(##(/((///*(&#(##/    
+  /#((%(#(((((//#((((((((((((((((((((((((#(((((((((((/##(((((//((//*    ####(/  
+   (((###(###(#(#####(###############((#((((((((/((//(((#/(/////            ,,  
+     ,(###%####%&%#############(#(#(####(((((((/(((/////*//,                    
+         . .....*#(#######(((###(#(##(##(((/(/(/////,                           
+          .. ....,..........,..*#%#######/(                                     
+               ..  .............,*%%%%#%((((/                                   
+                       **,,,****//*(##((###(#(((                                
+                                        &#(#/#((((((((#                         
+        """.trimIndent())
+    })
+
 
 }

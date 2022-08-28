@@ -1,4 +1,5 @@
 import kotlinx.browser.document
+import kotlinx.browser.window
 import kotlinx.css.*
 import kotlinx.html.dom.append
 import kotlinx.html.js.div
@@ -38,6 +39,9 @@ fun main() {
     }
     console.addLine("Starting stfff")
     console.PS1 = { "${console.fileAccessor!!.currentDir.joinToString("/", "/")} > " }
+    if (window.location.hash == "#mobile" || (window.location.hash != "#desktop" && js("'ontouchstart' in document.documentElement") as Boolean)) {
+        console.openMobileKeyboardOnTap()
+    }
     console.fileAccessor!!.cd("/home/exhq")
     console.rerender()
     console.registerCommand(defaultLsCommand("ls", delayBetweenLines = 0.milliseconds))

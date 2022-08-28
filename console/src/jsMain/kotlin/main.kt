@@ -23,7 +23,7 @@ val defaultFileSystem = fileSystem {
 }
 
 fun main() {
-
+    var startupmsg = "type help to get a list of commands"
     val root = document.body!!.append.div()
     val console = KConsole.createFor(root, fileSystem = defaultFileSystem)
     injectGlobal {
@@ -37,11 +37,12 @@ fun main() {
         }
 
     }
-    console.addLine("Starting stfff")
     console.PS1 = { "${console.fileAccessor!!.currentDir.joinToString("/", "/")} > " }
     if (window.location.hash == "#mobile" || (window.location.hash != "#desktop" && js("'ontouchstart' in document.documentElement") as Boolean)) {
         console.openMobileKeyboardOnTap()
+        startupmsg = "nea added phone support, kindaaa. phone is shit anyways \ntype help for a list of commands"
     }
+    console.addMultilineText(startupmsg)
     console.fileAccessor!!.cd("/home/exhq")
     console.rerender()
     console.registerCommand(defaultLsCommand("ls", delayBetweenLines = 0.milliseconds))

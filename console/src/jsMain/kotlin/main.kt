@@ -7,7 +7,7 @@ import moe.nea89.website.*
 import styled.injectGlobal
 import kotlin.time.Duration.Companion.milliseconds
 
-val isnickrude = true
+var isnickrude = true
 val defaultFileSystem = fileSystem {
     "etc" {
         "passwd" text "hunter2"
@@ -21,7 +21,14 @@ val defaultFileSystem = fileSystem {
     }
     "flag" text "CTF{12345abcdefghijklmonp3.1.4.1.5.9.2.8}"
 }
-
+fun redirect(arg: String){
+    if(arg.matches("(https://|http://).*")){
+        window.location.href = arg
+    }
+    else{
+        window.location.href = "https://$arg"
+    }
+}
 fun main() {
     var startupmsg = "type help to get a list of commands"
     val root = document.body!!.append.div()
@@ -96,6 +103,13 @@ fun main() {
         else{
             console.addLine("bro you don have the password smh")
        }
+    })
+    console.registerCommand(command("vscode", "vsc"){
+        console.addLine("ew microsoft")
+        redirect("https://www.youtube.com/watch?v=lpiB2wMc49g")
+    })
+    console.registerCommand(command("testredirect"){
+    redirect(args[0])
     })
 
 }

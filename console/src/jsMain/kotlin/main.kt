@@ -7,7 +7,7 @@ import moe.nea89.website.*
 import styled.injectGlobal
 import kotlin.time.Duration.Companion.milliseconds
 
-
+val isnickrude = true
 val defaultFileSystem = fileSystem {
     "etc" {
         "passwd" text "hunter2"
@@ -59,7 +59,11 @@ fun main() {
 
     })
     console.registerCommand(command("blahaj", "shark"){
-        console.addMultilineText("""
+        if (isnickrude){
+            console.addLine("nick was rude ;-;")
+        }
+        else{
+            console.addMultilineText("""
                                           ,(((/                                 
                                         /(((((                                  
                                        ((((#((                              (// 
@@ -78,6 +82,8 @@ fun main() {
                        **,,,****//*(##((###(#(((                                
                                         &#(#/#((((((((#                         
         """.trimIndent())
+        }
+
     })
     console.registerCommand(command("sudo"){
         var str = ""

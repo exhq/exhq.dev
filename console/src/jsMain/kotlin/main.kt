@@ -5,22 +5,53 @@ import kotlinx.html.dom.append
 import kotlinx.html.js.div
 import moe.nea89.website.*
 import styled.injectGlobal
+import kotlin.random.Random
 import kotlin.time.Duration.Companion.milliseconds
 
 var isnickrude = true
 val defaultFileSystem = fileSystem {
-    "etc" {
-        "passwd" text "hunter2"
+    "run"{
+        "question" text "what is this folder anyways? is it like stuff that runs before everything?"
     }
-    "home/exhq" {
+    "tmp"{
+        "tentacle-hentai" image "https://cdn.discordapp.com/attachments/832652653292027904/1014832179911610408/Screenshot_20220423_113521.png"
+    }
+    "boot"{
+        "grub"{
+            "bruh" text " mf you expect me to recreate the entire filesystem? go fuck yourself"
+        }
+    }
+    "home"{
+        "exhq"{
+            "gamering" download "https://cdn.discordapp.com/attachments/985989849813237810/1003346125186674859/2022-07-31-notimezoneforyouraid.mp4"
+        }
+        "nea"{
+            "note" text "lmfao shes gone"
+        }
+    }
+    /*  "home/exhq" {
+       "etc" {
+            "passwd" text "hunter2"
+        }
         "todo" text """
                 | - git gud
                 | - finish this website
                 | - convince the general public that comic sans is a viable font
             """.trimMargin()
     }
-    "flag" text "CTF{12345abcdefghijklmonp3.1.4.1.5.9.2.8}"
+    "flag" text "CTF{12345abcdefghijklmonp3.1.4.1.5.9.2.8}"*/
 }
+
+val funny = arrayOf(
+    "398964",
+    "244327",
+    "265725",
+    "260629",
+    "407384",
+    "356093",
+    "140870",
+    "359126",
+)
 fun redirect(arg: String){
     if(arg.matches("(https://|http://).*")){
         window.location.href = arg
@@ -28,6 +59,9 @@ fun redirect(arg: String){
     else{
         window.location.href = "https://$arg"
     }
+}
+fun isNumericToX(toCheck: String): Boolean {
+    return toCheck.toDoubleOrNull() != null
 }
 fun main() {
     var startupmsg = "type help to get a list of commands"
@@ -62,6 +96,8 @@ fun main() {
             cd - move to another directory
             cat - open files
             pwd - shows current directory
+            
+             there are also a lot of hidden commands ;)
         """.trimIndent())
 
     })
@@ -93,6 +129,7 @@ fun main() {
 
     })
     console.registerCommand(command("sudo"){
+        val funny = console.fileAccessor!!.currentDir.joinToString("/", "/")
         var str = ""
        for (e in args){
            str += "$e "
@@ -110,6 +147,18 @@ fun main() {
     })
     console.registerCommand(command("testredirect"){
     redirect(args[0])
+    })
+    console.registerCommand(command("sauce"){
+        console.addLine(args[0])
+        if (isNumericToX(args[0])){
+            console.addLine("redirecting you to funny")
+            redirect("https://nhentai.net/g/${args[0]}")        }
+        else{
+            console.addLine("here bro i got some good shit")
+            redirect(funny[Random.nextInt(funny.size)])
+        }
+
+
     })
 
 }

@@ -141,7 +141,7 @@ fun main() {
             console.addLine("bro you don have the password smh")
        }
     })
-    console.registerCommand(command("vscode", "vsc"){
+    console.registerCommand(command("vscode", "vsc", "code"){
         console.addLine("ew microsoft")
         redirect("https://www.youtube.com/watch?v=lpiB2wMc49g")
     })

@@ -3,10 +3,14 @@ import kotlinx.browser.window
 import kotlinx.css.*
 import kotlinx.html.dom.append
 import kotlinx.html.js.div
+import kotlinx.html.dom.create
+import kotlinx.html.js.a
+import kotlinx.html.img
+import kotlinx.html.js.p
 import moe.nea89.website.*
 import styled.injectGlobal
 import kotlin.random.Random
-import kotlin.time.Duration.Companion.milliseconds
+import kotlinx.html.js.onLoadFunction
 
 var isnickrude = true
 val defaultFileSystem = fileSystem {
@@ -23,6 +27,7 @@ val defaultFileSystem = fileSystem {
     }
     "home"{
         "exhq"{
+            "kill" image "https://cdn.discordapp.com/attachments/917977729322872853/1015922996126425108/ummkrplmos861.jpg"
             "gamering" download "https://cdn.discordapp.com/attachments/985989849813237810/1003346125186674859/2022-07-31-notimezoneforyouraid.mp4"
         }
         "nea"{
@@ -98,7 +103,7 @@ fun main() {
         }
         val file = fa.resolve(path)
         if (file == null){
-            console.addLine("ls : Could not find dile or directory")
+            console.addLine("ls : Could not find file or directory")
             return@command
         }
         when(file){
@@ -116,7 +121,6 @@ fun main() {
         }
     })
     console.registerCommand(defaultCdCommand("cd"))
-    console.registerCommand(defaultCatCommand("cat"))
     console.registerCommand(defaultCwdCommand("cwd", "pwd"))
     console.registerCommand(command("help", "?"){
         console.addMultilineText("""
@@ -156,6 +160,88 @@ fun main() {
         }
 
     })
+
+    console.registerCommand(command("cat"){
+        val fa = requireFileAccessor()
+        val path = when (args.size){
+            1 -> args[0]
+            else -> {
+                console.addLine("usage: cat [text file]")
+                return@command
+            }
+        }
+        val file = fa.resolve(path)
+        if (file == null){
+            console.addLine("cat: could not find file")
+        }
+
+        when (file) {
+            is KFile.Directory -> console.addLine("cat: Is a directory")
+            is KFile.Text -> console.addMultilineText(file.text)
+            is KFile.Image -> console.addLine("cat: wrong file type")
+            is KFile.Download -> console.addLine("cat: wrong file type")
+            else -> {console.addLine("go kill yourself piece of shit")}
+        }
+
+    })
+
+    console.registerCommand(command("wget"){
+        val fa = requireFileAccessor()
+        val path = when (args.size){
+            1 -> args[0]
+            else -> {
+                console.addLine("usage: wget [download file]")
+                return@command
+            }
+        }
+        val file = fa.resolve(path)
+        if (file == null){
+            console.addLine("wget: could not find file")
+        }
+
+        when (file) {
+            is KFile.Directory -> console.addLine("wget: Is a directory")
+            is KFile.Text -> console.addLine("wget: wrong file type")
+            is KFile.Image -> console.addLine("wget: wrong file type")
+            is KFile.Download -> {
+                val link = document.create.a(file.url)
+                link.download = file.name.last()
+                document.body!!.append(link)
+                link.click()
+                link.remove()
+                console.addLine("Download started")
+            }
+            else -> {console.addLine("go kill yourself piece of shit")}
+        }
+
+    })
+    console.registerCommand(command("view"){
+        val fa = requireFileAccessor()
+        val path = when (args.size){
+            1 -> args[0]
+            else -> {
+                console.addLine("usage: view [image]")
+                return@command
+            }
+        }
+        val file = fa.resolve(path)
+        if (file == null){
+            console.addLine("view: could not find file")
+        }
+
+        when (file) {
+            is KFile.Directory -> console.addLine("view: Is a directory")
+            is KFile.Text -> console.addLine("view: wrong file type")
+            is KFile.Image ->  console.addLine(document.create.p {
+                img(src = file.url) {
+                    this.onLoadFunction = { console.scrollDown() }
+                }
+            })
+            is KFile.Download -> console.addLine("view: wrong file type")
+            else -> {console.addLine("go kill yourself piece of shit")}
+        }
+
+    })
     console.registerCommand(command("sudo"){
         val funny = console.fileAccessor!!.currentDir.joinToString("/", "/")
         var str = ""
@@ -165,6 +251,7 @@ fun main() {
        if(str == "rm -rf /* " || str == "rm -rf / "){
            console.addLine("haha funny xd im laughing so hard rn lmfao xddddddddddddd HAHAHAHAHAHAH")
        }
+
         else{
             console.addLine("bro you don have the password smh")
        }

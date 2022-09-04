@@ -21,7 +21,7 @@ kotlin {
     }
     sourceSets.named("jsMain") {
         dependencies {
-            implementation("com.github.romangraef:neamoe:484bc7c89")
+            implementation("com.github.romangraef:neamoe:8969cee")
             implementation(npm("@fontsource/comic-mono", "^4.5.0"))
         }
     }

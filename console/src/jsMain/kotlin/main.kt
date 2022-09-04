@@ -86,7 +86,35 @@ fun main() {
     console.addMultilineText(startupmsg)
     console.fileAccessor!!.cd("/home/exhq")
     console.rerender()
-    console.registerCommand(defaultLsCommand("ls", delayBetweenLines = 0.milliseconds))
+    console.registerCommand(command("ls"){
+        val fa = requireFileAccessor()
+        val path = when(args.size){
+            0 -> "."
+            1 -> args[0]
+            else -> {
+                console.addLine("Usage: ls [directory or file]")
+                return@command
+            }
+        }
+        val file = fa.resolve(path)
+        if (file == null){
+            console.addLine("ls : Could not find dile or directory")
+            return@command
+        }
+        when(file){
+            is KFile.Directory ->{
+                val longestName = file.files.keys.maxOf { it.length }
+                file.files.forEach { (name, file) ->
+                    console.addLine(
+                        name + " ".repeat(longestName + 1 - name.length) + "(${file.fileType})"
+                    )
+                    console.rerender()
+                }
+            }
+
+            else -> console.addLine("ls: is a ${file.fileType}")
+        }
+    })
     console.registerCommand(defaultCdCommand("cd"))
     console.registerCommand(defaultCatCommand("cat"))
     console.registerCommand(defaultCwdCommand("cwd", "pwd"))

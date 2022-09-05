@@ -215,7 +215,7 @@ fun main() {
         }
 
     })
-    console.registerCommand(command("view"){
+    console.registerCommand(command("view", "show"){
         val fa = requireFileAccessor()
         val path = when (args.size){
             1 -> args[0]

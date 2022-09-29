@@ -9,10 +9,8 @@ import kotlinx.html.img
 import kotlinx.html.js.p
 import moe.nea89.website.*
 import styled.injectGlobal
-import kotlin.random.Random
 import kotlinx.html.js.onLoadFunction
 
-var isnickrude = true
 val defaultFileSystem = fileSystem {
     "run"{
         "question" text "what is this folder anyways? is it like stuff that runs before everything?"
@@ -34,29 +32,7 @@ val defaultFileSystem = fileSystem {
             "note" text "lmfao shes gone"
         }
     }
-    /*  "home/exhq" {
-       "etc" {
-            "passwd" text "hunter2"
-        }
-        "todo" text """
-                | - git gud
-                | - finish this website
-                | - convince the general public that comic sans is a viable font
-            """.trimMargin()
-    }
-    "flag" text "CTF{12345abcdefghijklmonp3.1.4.1.5.9.2.8}"*/
 }
-
-val funny = arrayOf(
-    "398964",
-    "244327",
-    "265725",
-    "260629",
-    "407384",
-    "356093",
-    "140870",
-    "359126",
-)
 fun redirect(arg: String){
     if(arg.matches("(https://|http://).*")){
         window.location.href = arg
@@ -64,9 +40,6 @@ fun redirect(arg: String){
     else{
         window.location.href = "https://$arg"
     }
-}
-fun isNumericToX(toCheck: String): Boolean {
-    return toCheck.toDoubleOrNull() != null
 }
 fun main() {
     var startupmsg = "type help to get a list of commands"
@@ -80,6 +53,7 @@ fun main() {
         body {
             backgroundImage = Image("url(weebshit1.jpg)")
             backgroundSize = "cover"
+            backgroundAttachment = BackgroundAttachment.fixed
         }
 
     }
@@ -133,11 +107,8 @@ fun main() {
         """.trimIndent())
 
     })
-    console.registerCommand(command("blahaj", "shark"){
-        if (isnickrude){
-            console.addLine("nick was rude ;-;")
-        }
-        else{
+    console.registerCommand(command("blahaj", "shark")
+{
             console.addMultilineText("""
                                           ,(((/                                 
                                         /(((((                                  
@@ -157,7 +128,6 @@ fun main() {
                        **,,,****//*(##((###(#(((                                
                                         &#(#/#((((((((#                         
         """.trimIndent())
-        }
 
     })
 
@@ -243,7 +213,8 @@ fun main() {
 
     })
     console.registerCommand(command("sudo"){
-        val funny = console.fileAccessor!!.currentDir.joinToString("/", "/")
+        //testing
+        //val funny = console.fileAccessor!!.currentDir.joinToString("/", "/")
         var str = ""
        for (e in args){
            str += "$e "
@@ -262,18 +233,6 @@ fun main() {
     })
     console.registerCommand(command("testredirect"){
     redirect(args[0])
-    })
-    console.registerCommand(command("sauce"){
-        console.addLine(args[0])
-        if (isNumericToX(args[0])){
-            console.addLine("redirecting you to funny")
-            redirect("https://nhentai.net/g/${args[0]}")        }
-        else{
-            console.addLine("here bro i got some good shit")
-            redirect(funny[Random.nextInt(funny.size)])
-        }
-
-
     })
 
 }

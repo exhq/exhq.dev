@@ -11,6 +11,7 @@ import moe.nea89.website.*
 import styled.injectGlobal
 import kotlinx.html.js.onLoadFunction
 
+
 val defaultFileSystem = fileSystem {
     "run"{
         "question" text "what is this folder anyways? is it like stuff that runs before everything?"
@@ -34,7 +35,7 @@ val defaultFileSystem = fileSystem {
     }
 }
 fun redirect(arg: String){
-    if(arg.matches("(https://|http://).*")){
+    if("(https://|http://).*".toRegex().matches(arg)){
         window.location.href = arg
     }
     else{
@@ -56,11 +57,13 @@ fun main() {
             backgroundAttachment = BackgroundAttachment.fixed
         }
 
+
     }
     console.PS1 = { "${console.fileAccessor!!.currentDir.joinToString("/", "/")} > " }
     if (window.location.hash == "#mobile" || (window.location.hash != "#desktop" && js("'ontouchstart' in document.documentElement") as Boolean)) {
         console.openMobileKeyboardOnTap()
-        startupmsg = "nea added phone support, kindaaa. phone is shit anyways \ntype help for a list of commands"
+        startupmsg = "nea added phone support, kindaaa. phone is shit anyways\n$startupmsg"
+
     }
     console.addMultilineText(startupmsg)
     console.fileAccessor!!.cd("/home/exhq")
@@ -103,7 +106,7 @@ fun main() {
             cat - open files
             pwd - shows current directory
             
-             there are also a lot of hidden commands ;)
+            there are also a lot of hidden commands ;)
         """.trimIndent())
 
     })
@@ -150,7 +153,7 @@ fun main() {
             is KFile.Text -> console.addMultilineText(file.text)
             is KFile.Image -> console.addLine("cat: wrong file type")
             is KFile.Download -> console.addLine("cat: wrong file type")
-            else -> {console.addLine("go kill yourself piece of shit")}
+            else -> {console.addLine("lmao wtf did you do this is an error, show it to echo or something")}
         }
 
     })
@@ -181,7 +184,7 @@ fun main() {
                 link.remove()
                 console.addLine("Download started")
             }
-            else -> {console.addLine("go kill yourself piece of shit")}
+            else -> {console.addLine("lmao wtf did you do this is an error, show it to echo or something")}
         }
 
     })
@@ -208,7 +211,7 @@ fun main() {
                 }
             })
             is KFile.Download -> console.addLine("view: wrong file type")
-            else -> {console.addLine("go kill yourself piece of shit")}
+            else -> {console.addLine("lmao wtf did you do this is an error, show it to echo or something")}
         }
 
     })
@@ -229,10 +232,26 @@ fun main() {
     })
     console.registerCommand(command("vscode", "vsc", "code"){
         console.addLine("ew microsoft")
-        redirect("https://www.youtube.com/watch?v=lpiB2wMc49g")
+        redirect("https://www.poketube.fun/watch?v=lpiB2wMc49g")
     })
     console.registerCommand(command("testredirect"){
     redirect(args[0])
+    })
+    console.registerCommand(command("clear"){
+        console.addLine("im too lazy to implement it correctly")
+        window.location.reload()
+    })
+    console.registerCommand(command("poketube"){
+        if (args.isEmpty()){
+            console.addLine("turns your nasty youtube link into a good untracked poketube link :) \nusage: poketube <youtube link>")
+        }
+        else{
+            if("(https://|http://)?((www\\.)?youtube.com/watch\\?)v=[a-zA-Z1-9]+.+".toRegex().matches(args[0])){
+                val arg = args[0]
+                console.addLine("https://poketube.fun/watch?"+args[0].subSequence(arg.indexOf("watch?")+6,arg.length)+"&pw=exhq")
+
+            }
+        }
     })
 
 }

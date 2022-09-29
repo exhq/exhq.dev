@@ -56,6 +56,9 @@ fun main() {
             backgroundSize = "cover"
             backgroundAttachment = BackgroundAttachment.fixed
         }
+        a{
+            color = Color("#AEC6CF")
+        }
 
 
     }
@@ -248,7 +251,8 @@ fun main() {
         else{
             if("(https://|http://)?((www\\.)?youtube.com/watch\\?)v=[a-zA-Z1-9]+.+".toRegex().matches(args[0])){
                 val arg = args[0]
-                console.addLine("https://poketube.fun/watch?"+args[0].subSequence(arg.indexOf("watch?")+6,arg.length)+"&pw=exhq")
+                val funny = "https://poketube.fun/watch?"+args[0].subSequence(arg.indexOf("watch?")+6,arg.length)
+                console.addLine(document.create.a(funny) { this.text("https://poketube.fun/watch?"+args[0].subSequence(arg.indexOf("watch?")+6,arg.length)) })
 
             }
         }

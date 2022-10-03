@@ -79,6 +79,7 @@ html, body{
 }
 
 .topnav a{
+    user-select: none;
     float: left;
     color: #f2f2f2;
     text-align: center;

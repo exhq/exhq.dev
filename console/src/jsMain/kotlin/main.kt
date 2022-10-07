@@ -138,6 +138,9 @@ fun main() {
     })
 
     console.registerCommand(command("cat"){
+        if (args[0] =="*"){
+            console.addLine("everything")
+        }
         val fa = requireFileAccessor()
         val path = when (args.size){
             1 -> args[0]

@@ -250,7 +250,7 @@ fun main() {
     })
     console.registerCommand(command("vscode", "vsc", "code") {
         console.addLine("ew microsoft")
-        redirect("https://www.poketube.fun/watch?v=lpiB2wMc49g")
+        redirect("https://www.youtube.com/watch?v=lpiB2wMc49g")
     })
     console.registerCommand(command("testredirect") {
         redirect(args[0])

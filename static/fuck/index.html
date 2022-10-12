@@ -9,6 +9,9 @@
   <title>fuck rust</title>
 </head>
 <style>
+  *{
+    overflow: hidden;
+  }
   #troll {
     font-size: 70px;
     width: fit-content;
@@ -22,6 +25,10 @@
   <div id="troll">fuck rust</div>
 </body>
 <script>
+const funny = decodeURIComponent(location.hash.slice(1))
+console.log(funny)
+document.getElementById("troll").innerHTML = "fuck " + funny
+document.title = "fuck " + funny
 const section = document.body;
 const text = document.getElementById("troll");
 const FPS = 60;
@@ -58,7 +65,6 @@ window.addEventListener("resize", () => {
   section.style.height = window.innerHeight + "px";
   section.style.width = window.innerWidth + "px";
 });
-
 
 </script>
 </html>

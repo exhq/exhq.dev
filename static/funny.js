@@ -66,3 +66,10 @@ function no() {
         audio.pause()
     }
   }
+
+const swapElm = document.getElementById('b');
+swapElm.addEventListener('mouseover', () => {
+    const prev = swapElm.style.transform;
+    if (!prev || prev === 'translateX(0px)') swapElm.style.transform = 'translateX(200%)';
+    else swapElm.style.transform = 'translateX(0px)';
+});

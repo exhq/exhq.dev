@@ -246,7 +246,7 @@ color: var(--title-color);
     font-size: 15px;
     font-weight: bold;
     text-align: center;
-    margin-left: 10%;
+    white-space: no-wrap;
     font-family: 'fira sans';
 }
 
@@ -256,15 +256,10 @@ color: var(--title-color);
 
 }
 
-#a:hover + #b {
-  transform: translateX(40%);
+#b {
+  width: fit-content;
+  margin-left: 10vw;
 }
-#b{
-  transform: translateX(0);
-  transition: transform 0 300ms linear
-  
-}
-
 
 .me{
     width: 50%;

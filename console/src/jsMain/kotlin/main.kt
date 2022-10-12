@@ -26,6 +26,7 @@ val defaultFileSystem = fileSystem {
     }
     "home" {
         "exhq" {
+            "meirl" image "https://cdn.discordapp.com/attachments/1015073917938966568/1028467698193145887/05uJwIT.png"
             "kill" image "https://cdn.discordapp.com/attachments/917977729322872853/1015922996126425108/ummkrplmos861.jpg"
             "gamering" download "https://cdn.discordapp.com/attachments/985989849813237810/1003346125186674859/2022-07-31-notimezoneforyouraid.mp4"
         }

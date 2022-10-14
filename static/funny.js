@@ -1,4 +1,4 @@
-var titles = [
+const titles = [
     "i work out",
     "funny",
     "Kara Kara Kara no Kara",
@@ -44,14 +44,17 @@ var titles = [
     "None.",
     "deez nuts",
     "trolley",
-    
+    "i want to live in piece",
+    "fill me with happiness",
+    "you're downbad",
+    "do not use code nopo"
+
 ] 
 
 document.title = titles[Math.floor(Math.random()*titles.length)];
 
 //button bs
-bool = false
-var audio 
+let audio, bool
 if (new Date().getMonth() === 9){
     console.log("boo")
     audio = new Audio('boo.mp3')

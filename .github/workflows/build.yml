@@ -27,9 +27,9 @@ jobs:
           done
 
           echo "</ul>">>"dist/malds/index.html"
-          mkdir dist
+          mkdir -p dist
           cp -r static/* dist
-          mkdir dist/beta
+          mkdir -p dist/beta
           cp -r console/build/distributions/* dist/beta
       - uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/main' }}

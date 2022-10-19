@@ -10,11 +10,23 @@ jobs:
       - uses: actions/setup-java@v1
         with:
           java-version: 8
+      - uses: nikeee/setup-pandoc@v1
       - uses: gradle/gradle-build-action@v2
         with:
           arguments: build
           build-root-directory: console
       - run: |
+          mkdir -p dist/malds
+          echo "<ul>">>"dist/malds/index.html"
+          for i in malds/*.md; do
+          noext=$(basename "$i" .md)
+          folder="dist/malds/$noext"
+          mkdir -p "$folder"
+          pandoc "$i" -o "$folder"/index.html 
+          printf '<li><a href="%s">%s</a></li>\n' "$noext" "$noext">>"dist/malds/index.html" 
+          done
+
+          echo "</ul>">>"dist/malds/index.html"
           mkdir dist
           cp -r static/* dist
           mkdir dist/beta

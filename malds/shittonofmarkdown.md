@@ -1,3 +1,0 @@
-balls  
-cocks  
-# huge penis

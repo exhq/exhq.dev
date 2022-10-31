@@ -25,10 +25,10 @@
   <div id="troll">fuck rust</div>
 </body>
 <script>
-const funny = decodeURIComponent(location.hash.slice(1))
+const funny = decodeURIComponent(location.hash.slice(1)) 
 console.log(funny)
-document.getElementById("troll").innerHTML = "fuck " + funny
-document.getElementById("fuck").innerHTML = "fuck " + funny
+document.getElementById("troll").innerText = "fuck " + funny
+document.getElementById("fuck").innerText = "fuck " + funny
 document.title = "fuck " + funny
 const section = document.body;
 const text = document.getElementById("troll");

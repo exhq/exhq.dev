@@ -10,6 +10,7 @@ const titles = [
     "ubuntu (ew)",
     "phantoms are annoying",
     "/give @a hugs 999999",
+    "[Object object]",
     "please add command support vendy",
     "mrekk",
     "women fear me",

@@ -2,6 +2,15 @@
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Google+Sans&display=swap');
 
+@font-face {
+  font-family: discord;
+  src:url("/static/discord.otf");
+}
+
+.discord-messages {
+	font-family: discord;
+}
+
 /* Declare color variables */
 :root{
   --title-color: #ff80a4;
@@ -306,4 +315,5 @@ html{
 
 .bruh{
   margin-left: 10%;
+  margin-right: 50%;
 }

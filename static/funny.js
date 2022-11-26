@@ -95,7 +95,8 @@ function no() {
 }
 
 const discordMessageToLaughAboutBecauseTheyAreFunny = [
-    {from: "712639419785412668", text: "i hate homosexual people. i deteste them. i crush them under my boot. i throw them off buildings. i drive spears through their hearts and cocks. i burn them. 😭"},
+    {from: "310702108997320705", text: "i hate homosexual people. i deteste them. i crush them under my boot. i throw them off buildings. i drive spears through their hearts and cocks. i burn them. 😭"},
+     {from: "370280028732260363", text: "hololive more like homosexual sex"},
 ];
 
 

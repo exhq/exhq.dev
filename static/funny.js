@@ -94,15 +94,28 @@ function no() {
   }
 }
 
-var helpme = [
-  ["ECHO", "712639419785412668", "i love homosexual people"],
-  ["gay porn", "370280028732260363", "hololive more like homosexual sex"],
-  [
-    "jimbobcooter",
-    "565248101615665152",
-    "i mean makima sus af, they make a point to say that the devils are coming after denji and there seems to be an odd reason she keeps him so close, the drinking scene really sold me on this as she seemed to know something about him and the others even suggested that other devils have intimate knowledge of the chainsaw devil",
-  ],
+const discordMessageToLaughAboutBecauseTheyAreFunny = [
+    {from: "712639419785412668", text: "i hate homosexual people. i deteste them. i crush them under my boot. i throw them off buildings. i drive spears through their hearts and cocks. i burn them. 😭"},
 ];
+
+
+const funnyLaughingDiscordMessageToDisplayIEnjoy = discordMessageToLaughAboutBecauseTheyAreFunny[getRandomInt(0, discordMessageToLaughAboutBecauseTheyAreFunny.length - 1)]
+
+
+fetch(`https://dp.nea.moe/avatar/${funnyLaughingDiscordMessageToDisplayIEnjoy.from}.json`).then(it => it.json()).then(authorData => {
+    const dm = document.getElementById("dm");
+    dm.innerHTML = `
+<discord-message
+        id="funny" style="font-family: discord;" 
+        author="${authorData.username}"
+        avatar="${authorData.avatar}">
+    ${funnyLaughingDiscordMessageToDisplayIEnjoy.text}
+</discord-message>
+`;
+    twemoji.parse(dm);
+});
+
+
 
 const swapElm = document.getElementById("b");
 
@@ -113,12 +126,3 @@ swapElm.addEventListener("mouseover", () => {
   else swapElm.style.transform = "translateX(0px)";
 });
 
-var a = getRandomInt(0, helpme.length - 1);
-var b = helpme.length - 1;
-
-const funny = document.getElementById("dm");
-funny.innerHTML = `
-<discord-message id="funny" style="font-family: discord;" author="${helpme[a][0]}" avatar="https://dp.nea.moe/avatar/${helpme[a][1]}">
-${helpme[a][2]}
-        </discord-message>
-`;

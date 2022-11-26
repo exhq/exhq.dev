@@ -320,6 +320,7 @@ html{
 img.emoji {
   /* Since we are using SVGs, you have to change the width using CSS */
   width:1.5em;
+  vertical-align: bottom;
 
   /* 
   This is to make the emojis feel like actual emojis to 

@@ -140,6 +140,10 @@ const discordMessageToLaughAboutBecauseTheyAreFunny = [
     from: "251564487650443265",
     text: "no i stare at women",
   },
+  {
+    from: "702973430449832038",
+    text: "joe mother",
+  },
 ];
 
 const funnyLaughingDiscordMessageToDisplayIEnjoy =

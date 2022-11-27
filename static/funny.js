@@ -133,7 +133,7 @@ const discordMessageToLaughAboutBecauseTheyAreFunny = [
     text: "￼￼￼￼￼￼￼￼￼￼￼￼￼￼",
   },
   {
-    from: "832411989095219230",
+    from: "780819226839220265",
     text: '<img src="https://cdn.discordapp.com/emojis/1024751352028602449.webp?size=96&quality=lossless" alt="">',
   },
   {

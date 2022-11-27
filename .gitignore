@@ -2,3 +2,5 @@ build/
 dist/
 .gradle/
 .idea/
+.vscode/
+.vscode/settings.json

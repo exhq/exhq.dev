@@ -144,6 +144,10 @@ const discordMessageToLaughAboutBecauseTheyAreFunny = [
     from: "702973430449832038",
     text: "joe mother",
   },
+  {
+    from: "381105838158249984",
+    text: "gay porn is adorable",
+  },
 ];
 
 const funnyLaughingDiscordMessageToDisplayIEnjoy =

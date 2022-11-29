@@ -161,13 +161,20 @@ fetch(
   .then((it) => it.json())
   .then((authorData) => {
     const dm = document.getElementById("dm");
-    dm.innerHTML = `
-<discord-message
-        id="funny" style="font-family: discord;" 
-        author="${authorData.username}"
-        avatar="${authorData.avatar}">
-    ${funnyLaughingDiscordMessageToDisplayIEnjoy.text}
-</discord-message>
+    dm.innerHTML = `<div class="funny">
+    <div class="avatar">
+      <img src="${authorData.avatar}" class="imgdc" alt="${authorData.username}">
+    </div>
+    <div class="messagecontent">
+      <div>
+        <span class="discord-author-username">${authorData.username}</span>
+        <span class="discord-message-timestamp">11/29/2022</span>
+      </div>
+      <div class="discord-message-body">
+        ${funnyLaughingDiscordMessageToDisplayIEnjoy.text}
+    </div>
+    </div>
+  </div>
 `;
     twemoji.parse(dm);
   });

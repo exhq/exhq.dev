@@ -330,3 +330,100 @@ img.emoji {
   */
   pointer-events: none; 
 }
+.funny{
+  color: rgb(220, 221, 222);
+display: flex;
+font-family: discord;
+font-size: 14.4px;
+line-height: 27.2px;
+margin-left: 10%;
+margin-right: 30%;
+padding-bottom: 10px;
+padding-left: 14.4px;
+padding-right: 14.4px;
+padding-top: 10px;
+visibility: visible;
+background-color:#36393e;
+}
+.avatar{
+  color: rgb(220, 221, 222);
+  font-family: discord;
+  font-size: 14.4px;
+  line-height: 27.2px;
+  margin-right: 16px;
+  margin-top: 1px;
+  min-width: 40px;
+  visibility: visible;
+  border-bottom-left-radius: 50%;
+border-bottom-right-radius: 50%;
+border-top-left-radius: 50%;
+border-top-right-radius: 50%;
+color: rgb(220, 221, 222);
+font-family: discord;
+font-size: 14.4px;
+height: 40px;
+line-height: 27.2px;
+visibility: visible;
+width: 40px;
+}
+.messagecontent{
+  color: rgb(220, 221, 222);
+  font-family: discord;
+  font-size: 14.4px;
+  font-weight: 400;
+  line-height: 23.0333px;
+  overflow-wrap: anywhere;
+  visibility: visible;
+  width: 290px;
+}
+.discord-author-username{
+  color: rgb(220, 221, 222);
+font-family: discord;
+font-size: 14.4px;
+font-weight: 400;
+line-height: 23.0333px;
+overflow-wrap: anywhere;
+visibility: visible;
+}
+.discord-message-timestamp{
+  color: rgb(114, 118, 125);
+font-family: discord;
+font-size: 12px;
+font-weight: 400;
+line-height: 23.0333px;
+margin-left: 3px;
+overflow-wrap: anywhere;
+visibility: visible;
+}
+.discord-message-body{
+  color: rgb(220, 221, 222);
+font-family: discord;
+font-size: 14.4px;
+font-weight: 400;
+line-height: 23.0333px;
+overflow-wrap: anywhere;
+position: relative;
+visibility: visible;
+}
+.imgdc{
+  border-bottom-left-radius: 100%;
+  border-bottom-right-radius: 100%;
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  color: rgb(220, 221, 222);
+  font-family: discord;
+  font-size: 14.4px;
+  line-height: 27.2px;
+  visibility: visible;
+  border-bottom-left-radius: 50%;
+border-bottom-right-radius: 50%;
+border-top-left-radius: 50%;
+border-top-right-radius: 50%;
+color: rgb(220, 221, 222);
+font-family: discord;
+font-size: 14.4px;
+height: 40px;
+line-height: 27.2px;
+visibility: visible;
+width: 40px;
+}

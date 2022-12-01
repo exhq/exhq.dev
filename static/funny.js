@@ -121,7 +121,7 @@ const discordMessageToLaughAboutBecauseTheyAreFunny = [
     text: "they should open a MILLENIAL gym where every MACHINE has a place to hold your PHONE to record TIKTOKs",
   },
   {
-    from: "712639419785412668",
+    from: "612944012697141277",
     text: "I feel like porn has given me such unrealistic expectations for sex... For example, having it with another person",
   },
   {

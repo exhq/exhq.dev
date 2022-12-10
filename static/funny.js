@@ -129,6 +129,10 @@ const discordMessageToLaughAboutBecauseTheyAreFunny = [
     text: "<b>S</b>uper<br><b>F</b>ragile<br><b>T</b>urtle<br><b>U</b>niverse",
   },
   {
+    from: "712639419785412668",
+    text: "FML<br>forge mod loader",
+  },
+  {
     from: "832411989095219230",
     text: "￼￼￼￼￼￼￼￼￼￼￼￼￼￼",
   },

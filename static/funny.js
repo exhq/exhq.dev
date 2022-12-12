@@ -82,6 +82,9 @@ let audio, bool;
 if (new Date().getMonth() === 9) {
   console.log("boo");
   audio = new Audio("boo.mp3");
+} else if (new Date().getMonth() === 11) {
+  console.log("chrismas! i am so happy about this information!");
+  audio = new Audio("hehemiku.mp3");
 } else {
   audio = new Audio("for-maeve.mp3");
 }

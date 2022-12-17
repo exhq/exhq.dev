@@ -97,82 +97,23 @@ function no() {
   }
 }
 
-const discordMessageToLaughAboutBecauseTheyAreFunny = [
-  { from: "370280028732260363", text: "hololive more like homosexual sex" },
-  {
-    from: "743395404900728862",
-    text: "Steal one from a family member or neighbour",
-  },
-  {
-    from: "670330426161889310",
-    text: "Can I be featured",
-  },
-  {
-    from: "932659481597333575",
-    text: "It's Not A Crime If You Don't Get Caught",
-  },
-  {
-    from: "325785563045298176",
-    text: "i recommend arch linux",
-  },
-  {
-    from: "881477310824464404",
-    text: "727 WHEN YOU SEE IT<br>WHEN YOU FUCKING SEE IT",
-  },
-  {
-    from: "191002728955117569",
-    text: "they should open a MILLENIAL gym where every MACHINE has a place to hold your PHONE to record TIKTOKs",
-  },
-  {
-    from: "612944012697141277",
-    text: "I feel like porn has given me such unrealistic expectations for sex... For example, having it with another person",
-  },
-  {
-    from: "148050294872342528",
-    text: "<b>S</b>uper<br><b>F</b>ragile<br><b>T</b>urtle<br><b>U</b>niverse",
-  },
-  {
-    from: "712639419785412668",
-    text: "FML<br>forge mod loader",
-  },
-  {
-    from: "832411989095219230",
-    text: "￼￼￼￼￼￼￼￼￼￼￼￼￼￼",
-  },
-  {
-    from: "780819226839220265",
-    text: '<img src="https://cdn.discordapp.com/emojis/1024751352028602449.webp?size=96&quality=lossless" alt="">',
-  },
-  {
-    from: "251564487650443265",
-    text: "no i stare at women",
-  },
-  {
-    from: "702973430449832038",
-    text: "joe mother",
-  },
-  {
-    from: "381105838158249984",
-    text: "gay porn is adorable",
-  },
-  {
-    from: "799022442671505408",
-    text: "says funny shit",
-  },
-];
+async function load(url) {
+  return await (await fetch(url)).json();
+}
 
-const funnyLaughingDiscordMessageToDisplayIEnjoy =
-  discordMessageToLaughAboutBecauseTheyAreFunny[
-    getRandomInt(0, discordMessageToLaughAboutBecauseTheyAreFunny.length - 1)
-  ];
+load(
+  "https://literallyafuckingjsonfile.literallyafuckingjsonfile.workers.dev/"
+).then((data) => {
+  const funnyLaughingDiscordMessageToDisplayIEnjoy =
+    data[getRandomInt(0, data.length - 1)];
 
-fetch(
-  `https://dp.nea.moe/avatar/${funnyLaughingDiscordMessageToDisplayIEnjoy.from}.json`
-)
-  .then((it) => it.json())
-  .then((authorData) => {
-    const dm = document.getElementById("dm");
-    dm.innerHTML = `<div class="funny">
+  fetch(
+    `https://dp.nea.moe/avatar/${funnyLaughingDiscordMessageToDisplayIEnjoy.from}.json`
+  )
+    .then((it) => it.json())
+    .then((authorData) => {
+      const dm = document.getElementById("dm");
+      dm.innerHTML = `<div class="funny">
     <div class="avatar">
       <img src="${authorData.avatar}" class="imgdc" alt="${authorData.username}">
     </div>
@@ -187,14 +128,6 @@ fetch(
     </div>
   </div>
 `;
-    twemoji.parse(dm);
-  });
-
-const swapElm = document.getElementById("b");
-
-swapElm.addEventListener("mouseover", () => {
-  const prev = swapElm.style.transform;
-  if (!prev || prev === "translateX(0px)")
-    swapElm.style.transform = "translateX(200%)";
-  else swapElm.style.transform = "translateX(0px)";
+      twemoji.parse(dm);
+    });
 });

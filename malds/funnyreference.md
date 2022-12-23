@@ -1,1 +1,0 @@
-"you act like pray but you're a predator; you use pity to lure in your victims, thats how you survive. you survive because people thing 'oh this poor piece of shit, he never gets a break. i guess ill hire him or marry him'

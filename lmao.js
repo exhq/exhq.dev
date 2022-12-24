@@ -1,4 +1,10 @@
+let bool;
+let beat = new Audio("./music.mp3");
 function lmao() {
-  let beat = new Audio("./music.mp3");
-  beat.play();
+  bool = !bool;
+  if (bool) {
+    beat.play();
+  } else {
+    beat.pause();
+  }
 }

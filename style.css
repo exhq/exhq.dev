@@ -132,3 +132,11 @@ img:not(.pfp) {
   right: 0;
   max-width: 10;
 }
+
+.agony::before {
+  content: "© exhq 2022-2022";
+}
+
+.agony:hover::before {
+  content: "click for explod";
+}

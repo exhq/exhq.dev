@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
 }
@@ -15,7 +16,8 @@ body {
   background-color: #2f2235;
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* for some reason 100% didn't work here */
+  min-height: 100vh;
+  /* for some reason 100% didn't work here */
 }
 
 
@@ -37,7 +39,8 @@ body {
 
 
 
-.flex-c-1 > h1, .flex-c-1 > p {
+.flex-c-1>h1,
+.flex-c-1>p {
   font-family: 'Magra', sans-serif;
   color: #9a738f;
 }
@@ -50,7 +53,7 @@ body {
   justify-content: center;
 }
 
-.flex-c-r > h1 {
+.flex-c-r>h1 {
   font-family: 'Magra', sans-serif;
   font-size: 40px;
   color: #d3acc8;
@@ -67,7 +70,7 @@ body {
   border-radius: 50%;
 }
 
-.flex-c-1 > p {
+.flex-c-1>p {
   font-size: 24px;
   font-family: 'Capriola', sans-serif;
   text-align: center;
@@ -83,18 +86,18 @@ body {
   align-items: center;
 }
 
-.copyright > p {
+.copyright>p {
   font-family: 'Fira Sans', sans-serif;
   font-size: 15px;
-  color:#554350;
+  color: #554350;
 }
 
-.copyright > p > a {
-  color:#554350;
+.copyright>p>a {
+  color: #554350;
 }
 
-.copyright > p > a:visited {
-  color:#554350;
+.copyright>p>a:visited {
+  color: #554350;
 }
 
 .links {
@@ -104,7 +107,7 @@ body {
   vertical-align: middle;
 }
 
-.links > a {
+.links>a {
   text-decoration: none;
   color: #d3acc8;
   padding-left: 0.5em;
@@ -113,8 +116,19 @@ body {
   transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-.links > a:hover {
+.links>a:hover {
   color: #BFC3BA;
   transform: scale(1.1);
   transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+body {
+  position: relative;
+}
+
+img:not(.pfp) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  max-width: 10;
 }

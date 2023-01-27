@@ -127,7 +127,7 @@ body {
   position: relative;
 }
 
-img:not(.pfp) {
+.lol {
   position: absolute;
   top: 0;
   right: 0;
@@ -135,7 +135,7 @@ img:not(.pfp) {
 }
 
 .agony::before {
-  content: "© exhq 2022-2022";
+  content: "© exhq 2022-2023";
 }
 
 .agony:hover::before {

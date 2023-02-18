@@ -1,143 +1,51 @@
-html,
-body {
-  cursor: url('https://cdn.discordapp.com/attachments/1058457047802318900/1065294840335704105/5ShupuD.webp'), auto;	
-  margin: 0;
-  padding: 0;
-}
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 
-a {
-  text-decoration: none;
-}
+html{
+  background-color: #16171a;
+  font-family: 'Quicksand', sans-serif;
+} 
 
-html {
-  min-height: 100vh;
-}
-
-body {
-  background-color: #2f2235;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  /* for some reason 100% didn't work here */
-}
-
-
-.c {
-  flex-grow: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #2f2235;
-}
-
-.footer {
-  display: flex;
-  height: 4vh;
-  padding: 1em;
-  margin-top: -1em;
-  background-color: #2f2235;
-}
-
-
-
-.flex-c-1>h1,
-.flex-c-1>p {
-  font-family: 'Magra', sans-serif;
-  color: #9a738f;
-}
-
-.flex-c-r {
-  display: flex;
-  flex-direction: row;
-  padding-right: 1em;
-  padding-bottom: 1em;
-  justify-content: center;
-}
-
-.flex-c-r>h1 {
-  font-family: 'Magra', sans-serif;
-  font-size: 40px;
-  color: #d3acc8;
-  align-self: flex-end;
-  transform: scale(1);
-  transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-
-.pfp {
-  height: 90px;
-  width: 90px;
-  vertical-align: middle;
-  margin-right: 1em;
-  border-radius: 50%;
-}
-
-.flex-c-1>p {
-  font-size: 24px;
-  font-family: 'Capriola', sans-serif;
-  text-align: center;
-  margin: 0;
-}
-
-
-
-.copyright {
-  display: flex;
-  padding-left: 0.5em;
-  margin-right: auto;
-  align-items: center;
-}
-
-.copyright>p {
-  font-family: 'Fira Sans', sans-serif;
-  font-size: 15px;
-  color: #554350;
-}
-
-.copyright>p>a {
-  color: #554350;
-}
-
-.copyright>p>a:visited {
-  color: #554350;
-}
-
-.links {
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  vertical-align: middle;
-}
-
-.links>a {
-  text-decoration: none;
-  color: #d3acc8;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-  transform: scale(1.00);
-  transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-
-.links>a:hover {
-  color: #BFC3BA;
-  transform: scale(1.1);
-  transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-
-body {
-  position: relative;
-}
-
-.lol {
+.centered-box {
+  float: left; width: 50%; height: 200px; background-color: #0f1012; 
   position: absolute;
-  top: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 2%;
+  width: 45%;
+  height: 40%;
+  padding: 20px;
+
+}
+
+.pfp{
+  display: flex;
+  align-items: center;
+}
+
+.pfp p{
+  display: inline-block;
+  margin-left: 5%;
+  font-size: 300%;
+  color: #ff80a4;
+}
+
+.pfp img {
+  display: inline-block;
+  border-radius: 100%;
+}
+
+.info{
+  font-size:x-large;
+  color: #ff80a4;
+}
+
+.corner-img {
+  width: 60px;
+  position: absolute;
+  bottom: 0;
   right: 0;
-  max-width: 10;
+  margin: 10px;
 }
 
-.agony::before {
-  content: "© exhq 2022-2023";
-}
-
-.agony:hover::before {
-  content: "click for explod";
-}
+/* Vertically center the text */

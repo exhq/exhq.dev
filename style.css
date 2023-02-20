@@ -50,4 +50,18 @@ html{
   margin: 10px;
 }
 
-/* Vertically center the text */
+#pfp:hover {
+  animation: rotation 250ms infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+
+

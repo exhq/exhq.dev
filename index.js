@@ -39,3 +39,7 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
+document.addEventListener("contextmenu", (event) => {
+  event.preventDefault();
+  alert("no rightclick for you bitchass")
+});

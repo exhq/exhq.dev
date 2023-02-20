@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 
 html{
+  overflow-x: hidden;
+  overflow-y: hidden;
   background-color: #16171a;
   font-family: 'Quicksand', sans-serif;
 } 

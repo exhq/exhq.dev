@@ -19,7 +19,30 @@ function moveImage() {
       randomY = containerHeight;
     }
     
-    
     img.style.left = randomX + "px";
     img.style.top = randomY + "px";
   }
+
+
+
+let keysPressed = [];
+
+document.addEventListener("keydown", (event) => {
+  const keyPressed = event.key;
+  keysPressed.push(keyPressed);
+  
+  const typedWord = keysPressed.join("");
+  if (typedWord.includes("funny")) {
+    console.log("Match found: " + typedWord);
+    alert("hahahahaha funny laugh hahahahh")
+    keysPressed = [];
+  } else if(typedWord.includes("osu")){
+    window.location.href = "https://www.youtube.com/watch?v=AaAF51Gwbxo&t=65s";
+  }
+});
+
+document.addEventListener("contextmenu", (event) => {
+    event.preventDefault();
+    alert("no rightclick for you bitchass")
+  });
+

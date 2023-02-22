@@ -1,4 +1,14 @@
-function moveImage() {
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+
+
+const moveImage = () => {
   var img = document.getElementById("poofed");
   var imgWidth = img.offsetWidth;
   var imgHeight = img.offsetHeight;
@@ -43,3 +53,19 @@ document.addEventListener("contextmenu", (event) => {
   event.preventDefault();
   alert("no rightclick for you bitchass")
 });
+
+
+
+function nomoreecho() {
+  const bleh = ['E','C','H','O']
+  let echo = document.getElementById("name")
+
+  echo.innerText = shuffleArray(bleh).join("") 
+  
+}
+
+
+function happynote(){
+  alert(`all shitposting aside, i owe a huge thanks to the vencord community. 
+they're the reason this website exists (they bullied my old domain)`)
+}

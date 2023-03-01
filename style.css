@@ -14,7 +14,7 @@ html{
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 2%;
-  width: 45%;
+  min-width: fit-content;
   height: 40%;
   padding: 20px;
 

@@ -20,6 +20,10 @@ html{
 
 }
 
+.hidden{
+  color: #121214;
+}
+
 .pfp{
   display: flex;
   align-items: center;

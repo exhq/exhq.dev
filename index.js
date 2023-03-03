@@ -6,7 +6,15 @@ function shuffleArray(array) {
   return array;
 }
 
-
+function shidded() {
+  const audio = new Audio('./music.mp3'); // create a new Audio object and specify the path to the audio file
+  if (audio.paused) {
+    audio.play(); // start playing the audio if it's currently paused
+  } else {
+    audio.pause(); // pause the audio if it's currently playing
+    audio.currentTime = 0; // reset the audio to the beginning
+  }
+}
 
 const moveImage = () => {
   var img = document.getElementById("poofed");

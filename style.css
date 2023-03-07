@@ -15,7 +15,7 @@ html{
   transform: translate(-50%, -50%);
   border-radius: 2%;
   min-width: fit-content;
-  height: 40%;
+  height: fit-content;
   padding: 20px;
 
 }
@@ -46,6 +46,10 @@ html{
   color: #ff80a4;
 }
 
+.name{
+  user-select: none;
+}
+
 .corner-img {
   width: 60px;
   position: absolute;
@@ -67,5 +71,11 @@ html{
   }
 }
 
-
+.switch{
+  width: 5%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+}
 

@@ -62,7 +62,9 @@ document.addEventListener("contextmenu", (event) => {
   alert("no rightclick for you bitchass")
 });
 
-
+function sweech() {
+  alert("this button is under construction")
+}
 
 function nomoreecho() {
   const bleh = ['E','C','H','O']

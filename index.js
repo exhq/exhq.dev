@@ -67,11 +67,15 @@ function spawnRandomImage(imgSrc, maxWidth, maxHeight) {
 }
 
 document.addEventListener("keydown", (event) => {
-  if (event.key === 'F12' || (event.ctrlKey && event.shiftKey && event.key === 'I')) {
-    event.preventDefault(); 
-    spawnRandomImage('https://cdn.discordapp.com/emojis/1064165280827318322.webp', 40, 40);
-    return
-  }
+    if (
+      (event.key === 'F12') ||
+      ((event.ctrlKey || event.metaKey) && event.shiftKey && (event.key === 'I'))
+    ) {
+      event.preventDefault(); 
+      spawnRandomImage('https://cdn.discordapp.com/emojis/1064165280827318322.webp', 40, 40);
+      return
+    }
+    
   const keyPressed = event.key;
   keysPressed.push(keyPressed);
 
@@ -90,8 +94,26 @@ document.addEventListener("contextmenu", (event) => {
   alert("no rightclick for you bitchass")
 });
 
+function getKeyAnswer() {
+  const key = prompt("Please enter a key:");
+
+  const answers = {
+    "test": `console.log("lmao")`,
+    "osu": `window.location.href = "https://www.youtube.com/watch?v=AaAF51Gwbxo&t=65s";`,
+    "neowofetch": `window.location.href = "https://github.com/exhq/neowofetch"`,
+    "vencord": `window.location.href = "vencord.exhq.dev"`,
+    "poof": `document.body.innerHTML = ""`,
+  };
+
+  if (key in answers) {
+    return answers[key];
+  } else {
+    alert("incorrect key");
+  }
+}
+
 function sweech() {
-  alert("this button is under construction")
+  eval(getKeyAnswer())
 }
 
 function nomoreecho() {
@@ -107,3 +129,22 @@ function happynote(){
   alert(`all shitposting aside, i owe a huge thanks to the vencord community. 
 they're the reason this website exists (they bullied my old domain)`)
 }
+
+
+
+let devToolsOpen = false;
+
+// Add a listener for the console.log() method
+const devToolsListener = () => {
+  devToolsOpen = true;
+};
+
+console.log('%c', devToolsListener);
+  
+  // Check if the DevTools are open
+  if (devToolsOpen) {
+    // Take some action, such as logging an error message or redirecting the user
+    console.log('DevTools are open!');
+    // window.location.href = 'https://example.com';
+  }
+

@@ -43,7 +43,35 @@ const moveImage = () => {
 
 let keysPressed = [];
 
+function spawnRandomImage(imgSrc, maxWidth, maxHeight) {
+  const width = window.innerWidth;
+  const height = window.innerHeight;
+
+  const xCoord = Math.floor(Math.random() * width);
+  const yCoord = Math.floor(Math.random() * height);
+
+
+  const imgWidth = Math.min(maxWidth, width);
+  const imgHeight = Math.min(maxHeight, height);
+
+ 
+  const imgElement = document.createElement('img');
+  imgElement.src = imgSrc;
+  imgElement.style.width = imgWidth + 'px';
+  imgElement.style.height = imgHeight + 'px';
+  imgElement.style.position = 'absolute';
+  imgElement.style.left = xCoord + 'px';
+  imgElement.style.top = yCoord + 'px';
+
+  document.body.appendChild(imgElement);
+}
+
 document.addEventListener("keydown", (event) => {
+  if (event.key === 'F12' || (event.ctrlKey && event.shiftKey && event.key === 'I')) {
+    event.preventDefault(); 
+    spawnRandomImage('https://cdn.discordapp.com/emojis/1064165280827318322.webp', 40, 40);
+    return
+  }
   const keyPressed = event.key;
   keysPressed.push(keyPressed);
 

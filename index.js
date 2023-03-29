@@ -15,8 +15,12 @@ function shidded() {
     audio.currentTime = 0; // reset the audio to the beginning
   }
 }
-
+let tries = 0
 const moveImage = () => {
+  tries += 1
+  if (tries > 10){
+    window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+  }
   var img = document.getElementById("poofed");
   var imgWidth = img.offsetWidth;
   var imgHeight = img.offsetHeight;

@@ -148,19 +148,5 @@ they're the reason this website exists (they bullied my old domain)`)
 
 
 
-let devToolsOpen = false;
-
-// Add a listener for the console.log() method
-const devToolsListener = () => {
-  devToolsOpen = true;
-};
-
-console.log('%c', devToolsListener);
-  
-  // Check if the DevTools are open
-  if (devToolsOpen) {
-    // Take some action, such as logging an error message or redirecting the user
-    console.log('DevTools are open!');
-    // window.location.href = 'https://example.com';
-  }
+//go fuck yourself
 

@@ -105,9 +105,21 @@ function getKeyAnswer() {
     "test": `console.log("lmao")`,
     "osu": `window.location.href = "https://www.youtube.com/watch?v=AaAF51Gwbxo&t=65s";`,
     "neowofetch": `window.location.href = "https://github.com/exhq/neowofetch"`,
-    "vencord": `window.location.href = "vencord.exhq.dev"`,
+    "vencord": `window.location.href = "https://vencord.exhq.dev"`,
     "poof": `document.body.innerHTML = ""`,
+    "lmao": `
+    fetch("https://api.bigdatacloud.net/data/client-ip").then(response => response.json())
+    .then(data => {
+      lmao = document.getElementById("name")
+      lmao.innerText = data.ipString
+      lol = document.getElementById("doxxed")
+      lol.innerText = "lmao get doxxed"
+    })
+  
+    `,
   };
+
+  
 
   if (key in answers) {
     return answers[key];

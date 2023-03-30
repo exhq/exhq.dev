@@ -6,6 +6,19 @@ function shuffleArray(array) {
   return array;
 }
 
+function replacer(id, name, comment ){
+  return `
+  <div class="pfp">
+      <img id="pfp" src="https://dp.nea.moe/avatar/${id}.png">
+      <p class="name" id="name">${name}</p>
+    </div>
+    <p id = "doxxed"class="info">${comment}</p>
+    <p class="hidden" onclick="shidded()">psst, click on me</p>
+    <img class="switch" src="./idk.png" onclick="sweech()">
+    <img id="poofed" class="corner-img" src="./github-mark-white.png" alt="Corner Image" onclick="moveImage()" onmouseover="moveImage()">
+  `
+}
+
 function shidded() {
   const audio = new Audio('./music.mp3'); // create a new Audio object and specify the path to the audio file
   if (audio.paused) {
@@ -115,10 +128,13 @@ function getKeyAnswer() {
       lol = document.getElementById("doxxed")
       lol.innerText = "lmao get doxxed"
     })
-  
+    
     `,
+    "quad": `
+    let agony = document.getElementById("pain") 
+agony.innerHTML = replacer("721121823433162782", "Quad", "dickandballs")`
   };
-
+  
   
 
   if (key in answers) {
@@ -127,7 +143,6 @@ function getKeyAnswer() {
     alert("incorrect key");
   }
 }
-
 function sweech() {
   eval(getKeyAnswer())
 }
@@ -148,5 +163,6 @@ they're the reason this website exists (they bullied my old domain)`)
 
 
 
-//go fuck yourself
+
+
 

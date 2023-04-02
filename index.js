@@ -150,6 +150,8 @@ function sweech() {
     metal(){
       const audio = new Audio('./metalfire.mp3');
       audio.play()
+      lol = document.getElementById("doxxed")
+      lol.innerText = "this is so fucking metal"
     }
   };
   

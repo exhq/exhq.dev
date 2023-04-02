@@ -146,6 +146,10 @@ function sweech() {
     christmas(){
       const audio = new Audio('./chrismass.mp3');
       audio.play()
+    },
+    metal(){
+      const audio = new Audio('./metalfire.mp3');
+      audio.play()
     }
   };
   

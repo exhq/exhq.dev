@@ -111,57 +111,10 @@ document.addEventListener("contextmenu", (event) => {
   alert("no rightclick for you bitchass")
 });
 
-function sweech() {
+async function sweech() {
   const key = prompt("Please enter a key:");
-
-  const answers = {
-    test(){
-      console.log("lmao")
-    },
-    osu(){
-      window.location.href = "https://www.youtube.com/watch?v=AaAF51Gwbxo&t=65s";
-    },
-    neowofetch(){
-      window.location.href = "https://github.com/exhq/neowofetch"
-    },
-    vencord(){
-      window.location.href = "https://vencord.exhq.dev"
-    },
-    poof(){
-      document.body.innerHTML = ""
-    },
-    lmao(){
-      fetch("https://api.bigdatacloud.net/data/client-ip").then(response => response.json())
-      .then(data => {
-        lmao = document.getElementById("name")
-        lmao.innerText = data.ipString
-        lol = document.getElementById("doxxed")
-        lol.innerText = "lmao get doxxed"
-      })
-    },
-    quad(){
-      let agony = document.getElementById("pain") 
-      agony.innerHTML = replacer("721121823433162782", "Quad", "dickandballs")
-    },
-    christmas(){
-      const audio = new Audio('./chrismass.mp3');
-      audio.play()
-    },
-    metal(){
-      const audio = new Audio('./metalfire.mp3');
-      audio.play()
-      lol = document.getElementById("doxxed")
-      lol.innerText = "this is so fucking metal"
-    }
-  };
-  
-  
-
-  if (key in answers) {
-    answers[key]()
-  } else {
-    alert("incorrect key");
-  }
+  console.log(key)
+  eval(await fetch(`https://dickandballs.exhq.dev/${key}`).then(response => response.text()))
 }
 
 

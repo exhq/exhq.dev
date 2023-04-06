@@ -112,9 +112,19 @@ document.addEventListener("contextmenu", (event) => {
 });
 
 async function sweech() {
-  const key = prompt("Please enter a key:");
-  console.log(key)
-  eval(await fetch(`https://dickandballs.exhq.dev/${key}`).then(response => response.text()))
+  try {
+    const key = prompt("Please enter a key:");
+    if (!key) throw new Error("Key not provided");
+
+    const response = await fetch(`https://dickandballs.exhq.dev/${key}`);
+    if (!response.ok) throw new Error("Invalid key");
+
+    const codeBlock = await response.text();
+    const result = new Function(codeBlock)();
+    console.log(result);
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 

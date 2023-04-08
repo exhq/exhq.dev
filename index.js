@@ -1,4 +1,12 @@
+function annoyingassthingjusttomakeconsolenotwork() {
+  console.log('%c gay sex!', 'color: red; font-size: 24px;');
+  console.log('%c gay sex!', 'color: red; font-size: 24px;');
+  console.log('%c gay sex!', 'color: red; font-size: 24px;');
+  
+}
+
 function shuffleArray(array) {
+  annoyingassthingjusttomakeconsolenotwork()
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]];
@@ -6,7 +14,17 @@ function shuffleArray(array) {
   return array;
 }
 
+function stringToSpans(str) {
+  let output = '';
+  for (let i = 0; i < str.length; i++) {
+    annoyingassthingjusttomakeconsolenotwork()
+    output += '<span  class="noclickey" onclick="this.innerText=\'   \'">' + str.charAt(i) + '</span>';
+  }
+  return output;
+}
+
 function replacer(id, name, comment ){
+  annoyingassthingjusttomakeconsolenotwork()
   return `
   <div class="pfp">
       <img id="pfp" src="https://dp.nea.moe/avatar/${id}.png">
@@ -35,6 +53,7 @@ const moveImage = () => {
     window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
   }
   var img = document.getElementById("poofed");
+  annoyingassthingjusttomakeconsolenotwork()
   var imgWidth = img.offsetWidth;
   var imgHeight = img.offsetHeight;
   var containerWidth = window.innerWidth - imgWidth - 400;
@@ -59,6 +78,7 @@ const moveImage = () => {
 }
 
 let keysPressed = [];
+annoyingassthingjusttomakeconsolenotwork()
 
 function spawnRandomImage(imgSrc, maxWidth, maxHeight) {
   const width = window.innerWidth;
@@ -88,6 +108,10 @@ document.addEventListener("keydown", (event) => {
       (event.key === 'F12') ||
       ((event.ctrlKey || event.metaKey) && event.shiftKey && (event.key === 'I'))
     ) {
+      annoyingassthingjusttomakeconsolenotwork()
+      annoyingassthingjusttomakeconsolenotwork()
+      annoyingassthingjusttomakeconsolenotwork()
+      annoyingassthingjusttomakeconsolenotwork()
       event.preventDefault(); 
       spawnRandomImage('https://cdn.discordapp.com/emojis/1064165280827318322.webp', 40, 40);
       return
@@ -117,6 +141,7 @@ async function sweech() {
     if (!key) throw new Error("Key not provided");
 
     const response = await fetch(`https://dickandballs.exhq.dev/${key}`);
+    annoyingassthingjusttomakeconsolenotwork()
     if (!response.ok) throw new Error("Invalid key");
 
     const codeBlock = await response.text();
@@ -143,7 +168,5 @@ they're the reason this website exists (they bullied my old domain)`)
 }
 
 
-
-
-
-
+let test = document.getElementById("type")
+test.innerHTML=stringToSpans("competitive shitposter")

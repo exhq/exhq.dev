@@ -49,7 +49,9 @@ html{
 .name{
   user-select: none;
 }
-
+.noclickey{
+  user-select: none;
+}
 .corner-img {
   width: 60px;
   position: absolute;

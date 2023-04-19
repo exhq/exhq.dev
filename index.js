@@ -6,21 +6,13 @@ function annoyingassthingjusttomakeconsolenotwork() {
 }
 
 function message(msg) {
-  // Create a new div element
-  var messageBox = document.createElement("div");
-  
-  // Add the "messagebox" class to the message box
+  let messageBox = document.createElement("div");
   messageBox.classList.add("messagebox");
-  
-  // Set the message content
   messageBox.innerHTML = msg;
-  
-  // Add an event listener to close the message box when clicked
   messageBox.addEventListener("click", function() {
     document.body.removeChild(messageBox);
   });
   
-  // Add the message box to the document body
   document.body.appendChild(messageBox);
 }
 

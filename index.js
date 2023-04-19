@@ -5,6 +5,25 @@ function annoyingassthingjusttomakeconsolenotwork() {
   
 }
 
+function message(msg) {
+  // Create a new div element
+  var messageBox = document.createElement("div");
+  
+  // Add the "messagebox" class to the message box
+  messageBox.classList.add("messagebox");
+  
+  // Set the message content
+  messageBox.innerHTML = msg;
+  
+  // Add an event listener to close the message box when clicked
+  messageBox.addEventListener("click", function() {
+    document.body.removeChild(messageBox);
+  });
+  
+  // Add the message box to the document body
+  document.body.appendChild(messageBox);
+}
+
 function shuffleArray(array) {
   annoyingassthingjusttomakeconsolenotwork()
   for (let i = array.length - 1; i > 0; i--) {
@@ -18,7 +37,7 @@ function stringToSpans(str) {
   let output = '';
   for (let i = 0; i < str.length; i++) {
     annoyingassthingjusttomakeconsolenotwork()
-    output += '<span  class="noclickey" onclick="this.innerText=\'   \'">' + str.charAt(i) + '</span>';
+    output += '<span class="noclickey" onclick="this.style.color=\'#0f1012\'">' + str.charAt(i) + '</span>';
   }
   return output;
 }
@@ -123,7 +142,7 @@ document.addEventListener("keydown", (event) => {
   const typedWord = keysPressed.join("");
   if (typedWord.includes("funny")) {
     console.log("Match found: " + typedWord);
-    alert("hahahahaha funny laugh hahahahh");
+    message("hahahahaha funny laugh hahahahh");
     keysPressed = [];
   } else if (typedWord.includes("osu")) {
     window.location.href = "https://www.youtube.com/watch?v=AaAF51Gwbxo&t=65s";
@@ -132,7 +151,7 @@ document.addEventListener("keydown", (event) => {
 
 document.addEventListener("contextmenu", (event) => {
   event.preventDefault();
-  alert("no rightclick for you bitchass")
+  message("no rightclick for you bitchass")
 });
 
 async function sweech() {
@@ -163,7 +182,7 @@ function nomoreecho() {
 
 
 function happynote(){
-  alert(`all shitposting aside, i owe a huge thanks to the vencord community. 
+  message(`all shitposting aside, i owe a huge thanks to the vencord community. 
 they're the reason this website exists (they bullied my old domain)`)
 }
 

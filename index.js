@@ -2,8 +2,15 @@ function annoyingassthingjusttomakeconsolenotwork() {
   console.log('%c gay sex!', 'color: red; font-size: 24px;');
   console.log('%c gay sex!', 'color: red; font-size: 24px;');
   console.log('%c gay sex!', 'color: red; font-size: 24px;');
-  
 }
+
+let soontobecookie = ""
+document.cookie = ""
+for (let i = 0; i < 99; i++) {
+  soontobecookie += "gay sex! "
+}
+
+document.cookie = soontobecookie
 
 function message(msg) {
   let messageBox = document.createElement("div");

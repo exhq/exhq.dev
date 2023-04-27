@@ -72,7 +72,7 @@
             mousePosY = event.clientY;
         };
 
-        window.onekoInterval = setInterval(frame, 100);
+        window.onekoInterval = setInterval(frame, 1);
     }
 
     function setSprite(name, frame) {

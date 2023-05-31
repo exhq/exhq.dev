@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 
-html{
+body{
   overflow-x: hidden;
   overflow-y: hidden;
   background-color: #16171a;
   font-family: 'Quicksand', sans-serif;
-} 
+}
 
 .centered-box {
   float: left; width: 50%; height: 200px; background-color: #0f1012; 

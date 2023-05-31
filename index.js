@@ -4,7 +4,7 @@ function annoyingassthingjusttomakeconsolenotwork() {
   console.log('%c gay sex!', 'color: red; font-size: 24px;');
 }
 
-let soontobecookie = ""
+let soontobecookie = "gay sex"
 document.cookie = ""
 for (let i = 0; i < 99; i++) {
   soontobecookie += "gay sex! "
@@ -48,7 +48,7 @@ function replacer(id, name, comment ){
       <img id="pfp" src="https://dp.nea.moe/avatar/${id}.png">
       <p class="name" id="name">${name}</p>
     </div>
-    <p id = "doxxed"class="info">${comment}</p>
+    <p id = "doxxed" class="info">${comment}</p>
     <p class="hidden" onclick="shidded()">psst, click on me</p>
     <img class="switch" src="./idk.png" onclick="sweech()">
     <img id="poofed" class="corner-img" src="./github-mark-white.png" alt="Corner Image" onclick="moveImage()" onmouseover="moveImage()">
@@ -188,3 +188,17 @@ they're the reason this website exists (they bullied my old domain)`)
 
 let test = document.getElementById("type")
 test.innerHTML=stringToSpans("competitive shitposter")
+
+
+
+
+if (currentDate.getMonth() + 1 === 6) {
+  let gay = document.getElementById("pain")
+  gay.innerHTML = replacer("712639419785412668", "GAY ECHO", "its gay month")
+
+  const body = document.body;
+  body.style.background = 'linear-gradient(to right, #55CDFC, #F7A8B8, #FFFFFF, #F7A8B8, #55CDFC)';
+  gay.style.backgroundColor = '#0f101250'
+  document.getElementById("name").style.color = '#000000'
+  document.getElementById("doxxed").style.color = "#000000"
+}

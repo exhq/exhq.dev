@@ -191,7 +191,7 @@ test.innerHTML=stringToSpans("competitive shitposter")
 
 
 
-
+const currentDate = new Date();
 if (currentDate.getMonth() + 1 === 6) {
   let gay = document.getElementById("pain")
   gay.innerHTML = replacer("712639419785412668", "GAY ECHO", "its gay month")

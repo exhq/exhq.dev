@@ -50,12 +50,6 @@ h1 {
     color: #213547;
     background-color: #ffffff;
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
 }
 
 .page1 {
@@ -86,9 +80,6 @@ h1 {
     height: 100vh; /* adjust to your desired height */
   }
 
-  .centered-div {
-    text-align: center;
-  }
 
 @keyframes rotate {
   from {

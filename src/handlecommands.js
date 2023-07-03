@@ -1,5 +1,16 @@
 const commands = {};
 
+let gaycolors = [
+    "#16171a",
+    "#7f0622",
+    "#ff8426",
+    "#ffd100",
+    "#ff2674",
+    "#234975",
+    "#bfff3c",
+    "#007899"
+]
+
 function registerCommand(commandName, handler) {
     commands[commandName] = handler;
 }
@@ -11,7 +22,12 @@ export default function handleCommands(input) {
     try {
         return commands[command](args);
     } catch (e) {
-        return e
+        if (e instanceof TypeError) {
+            return "unknown command"
+        } else {
+            return "some horrible shit happened, contact echo"
+        }
+
     }
 }
 
@@ -20,15 +36,21 @@ registerCommand("add", (args) => {
 });
 
 
-registerCommand("logo", (args) => {
-    const newSource = args[0];
+registerCommand("gay", () => {
+    let all = document.querySelectorAll("*");
 
-    const logoElement = document.querySelector(".logo");
-
-    if (logoElement instanceof HTMLImageElement) {
-        logoElement.src = newSource;
-        return "Logo source changed successfully";
-    } else {
-        return "Logo element not found";
+    for (let i = 0, max = all.length; i < max; i++) {
+        let element = all[i];
+        if (element instanceof HTMLElement) {
+            element.style.color = gaycolors[Math.floor(Math.random()*gaycolors.length)];
+        }
     }
+    document.documentElement.style.background = "linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet)";
+    return '"let there be gay" -  Gayesis 1:3'
+
+    
+});
+
+registerCommand("help", ()=>{
+    return "figure it out bitchass"
 })

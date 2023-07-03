@@ -20,6 +20,7 @@ img{
 }
 p{
     font-size: large;
+    word-wrap: break-word;
 }
 .item {
   display: grid;
@@ -28,7 +29,7 @@ p{
 }
 
 .image {
-  margin-right: 10px; /* Optional: Add spacing between the image and text */
+  margin-right: 10px; 
 }
 
 .text-container {

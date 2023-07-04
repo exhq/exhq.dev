@@ -35,6 +35,9 @@ registerCommand("add", (args) => {
     return (+args[0]) + (+args[1])
 });
 
+registerCommand("among", () =>{
+    return "SUS!!!!!!! AMONGG ussss!!1 idk"
+})
 
 registerCommand("gay", () => {
     let all = document.querySelectorAll("*");
@@ -54,3 +57,4 @@ registerCommand("gay", () => {
 registerCommand("help", ()=>{
     return "figure it out bitchass"
 })
+

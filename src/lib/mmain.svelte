@@ -6,7 +6,7 @@
 </script>
 
 <div class="container">
-  <div class="page1">
+  <div>
     <div class="logocontainer">
       <img
         src="https://dp.nea.moe/avatar/712639419785412668.png"
@@ -25,6 +25,16 @@
     </p>
   </div>
 </div>
+ 
+<div class="thingies">
+  <a href="https://twitter.com/exhqwq"><img class="infologos" src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Logo_of_Twitter.svg" alt=""></a>
+  <a href="https://github.com/exhq"><img class="infologos" src="https://cdn.discordapp.com/attachments/1026504914131759104/1125801730043547778/tMUQol8.svg" alt=""></a>
+</div>
+
+<div class="page1">
+
+</div>
+
 
 <style>
   :root {
@@ -48,7 +58,15 @@
     line-height: 1.1;
   }
 
+  .thingies{
+    text-align: center;
+    justify-content: center;
+    place-items: center;
+  }
 
+  .infologos{
+    max-width: 2%;
+  }
 
   .page1 {
     height: 100vh; /* Make each page take up the full viewport height */
@@ -60,6 +78,7 @@
     user-select: none;
   }
   .logocontainer {
+    text-align: center;
     border-radius: 100%;
     overflow: hidden;
     height: 10em;
@@ -70,6 +89,7 @@
     width: 10em;
     will-change: filter;
     transition: filter 300ms;
+    display: inline-block;
     border-radius: 100%;
   }
   .logo:hover {
@@ -80,9 +100,10 @@
 
   .container {
     text-align: center;
-    display: grid;
+    display: flex;
+    justify-content: center;
     place-items: center;
-    height: 100vh; 
+    margin-top: 10%;
   }
 
   @keyframes rotate {

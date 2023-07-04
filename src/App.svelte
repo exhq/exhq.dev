@@ -6,7 +6,7 @@
   import Person from "./lib/person.svelte";
   const history = writable([]);
   let buffer = "";
-  let lmao = false;
+  export let lmao = false;
 
   function handleinput(input) {
     history.update((arr) => {
@@ -21,6 +21,8 @@
     let x = document.getElementsByClassName("terminal")[0]
     x.scrollTo({top: x.scrollHeight})
   });
+
+  
   document.addEventListener("keydown", function meow(event) {
     if (event.key === "t") {
       lmao = true;
@@ -59,7 +61,7 @@
 
 
   <Main />
-
+  
   <h1 class="skills">my skills</h1>
   <ProgressBar value={10} name="gaming" />
   <ProgressBar value={1000000} name="shitposting" />
@@ -68,6 +70,7 @@
     value={69}
     name="i ran out of stuff but press t for a surprise"
   />
+  
 </main>
 <br />
 <br />

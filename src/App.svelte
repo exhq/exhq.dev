@@ -7,10 +7,12 @@
   const history = writable([]);
   let buffer = "";
   export let lmao = false;
+  let ps1 = ">"
+
 
   function handleinput(input) {
     history.update((arr) => {
-      return [...arr, ">" + input, handlecommands(input)]
+      return [...arr, ps1 + input, handlecommands(input)]
     });
     requestAnimationFrame(() => {
       let x = document.getElementsByClassName("terminal")[0]

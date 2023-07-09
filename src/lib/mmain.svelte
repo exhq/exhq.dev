@@ -1,8 +1,58 @@
 <script>
+  function getRandomChild(array) {
+  const randomIndex = Math.floor(Math.random() * array.length);
+  return array[randomIndex];
+}
+  let chosenname = "ECHO"
   let vite = "e";
   function handleKeyDown() {
     vite += "e";
   }
+  const names = [
+    "zak",
+    "placeholder1",
+    "placeholder2",
+    "i have no idea what i am",
+    "stupid bitchass",
+    "useless",
+  
+  ]
+  function anime() {
+  chosenname += "│";
+  let name = chosenname;
+  let iterations = name.length;
+
+  // Define a helper function to update the name and chosenname values
+  const updateName = (i) => {
+    name = name.slice(0, i) + name.slice(i + 1);
+    chosenname = name + "│";
+  };
+
+  // Use a loop and setTimeout to update the name and chosenname values
+  for (let i = name.length - 1; i >= 0; i--) {
+    setTimeout(() => {
+      updateName(i);
+    }, (name.length - i) * 100); // Delay in milliseconds
+  }
+  // Execute the following code after the setTimeout iterations complete
+  setTimeout(() => {
+    let buffer = getRandomChild(names);
+    chosenname = "│";
+    for (let i = 0; i <= buffer.length; i++) {
+      setTimeout(() => {
+        chosenname = buffer.slice(0, i) + "│";
+      }, (i + 1) * 200); // Delay multiplied by the iteration index
+    }
+    chosenname = chosenname.slice(0, chosenname.length - 1);
+    // Remove the │ at the end
+    setTimeout(() => {
+      chosenname = chosenname.slice(0, chosenname.length - 1);
+    }, (buffer.length + 2) * 200); // Delay for buffer.length + 2 seconds
+  }, (iterations + 1) * 100); // Delay for an additional second to ensure the iterations are complete
+}
+
+
+
 </script>
 
 <div class="container">
@@ -14,8 +64,11 @@
         alt="mah sdfghijsjhdf"
       />
     </div>
+  </div>
+</div>
 
-    <h1>ECHO</h1>
+<div class="textcontainer">
+  <h1 class="name" on:click={anime}>{chosenname}</h1>
 
     <p>
       <!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -23,20 +76,36 @@
         >{vite}</span
       >r
     </p>
-  </div>
 </div>
- 
+
+
 <div class="thingies">
-  <a href="https://twitter.com/exhqwq"><img class="infologos" src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Logo_of_Twitter.svg" alt=""></a>
-  <a href="https://github.com/exhq"><img class="infologos" src="https://cdn.discordapp.com/attachments/1026504914131759104/1125801730043547778/tMUQol8.svg" alt=""></a>
+  <a href="https://twitter.com/exhqwq" data-text="exhqwq">
+    <img
+      class="infologos"
+      src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Logo_of_Twitter.svg"
+      alt=""
+    />
+  </a>
+  <a href="https://github.com/exhq" data-text="exhq">
+    <img
+      class="infologos"
+      src="https://cdn.discordapp.com/attachments/1026504914131759104/1125801730043547778/tMUQol8.svg"
+      alt=""
+    />
+  </a>
 </div>
 
-<div class="page1">
-
-</div>
-
+<div class="page1" />
 
 <style>
+  .name {
+    user-select: none;
+    cursor: pointer;
+  }
+  .textcontainer{
+    text-align: center;
+  }
   :root {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
@@ -58,14 +127,24 @@
     line-height: 1.1;
   }
 
-  .thingies{
+  .thingies {
     text-align: center;
     justify-content: center;
     place-items: center;
   }
-
-  .infologos{
-    max-width: 2%;
+  .thingies a:hover::after {
+    transform: translateX(-50%) translateY(100%);
+    content: attr(data-text);
+    position: absolute;
+    padding: 5px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0.8;
+  }
+  .infologos {
+    max-width: 2em;
   }
 
   .page1 {

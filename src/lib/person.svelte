@@ -50,8 +50,9 @@ p{
   text-align: center;
   background-color: #00000044;
   color: rgb(0, 255, 179);
+  opacity: 0;
 }
-  .image:hover::after {
+  .actualimage:hover::after {
     opacity: 1;
   }
 

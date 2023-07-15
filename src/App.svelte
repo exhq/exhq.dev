@@ -81,19 +81,21 @@
 
 <h1>just look at these amazing reviews!</h1>
 <div class="grid-container">
-  <Person name="vendy" id="343383572805058560" opinion="gay" />
-  <Person name="nea" id="310702108997320705" opinion="why is it so small?" />
+  <Person name="vendy" website="https://vendicated.dev" id="343383572805058560" opinion="gay" />
+  <Person name="nea" website="https://nea.moe" id="310702108997320705" opinion="why is it so small?" />
   <Person
     name="SlightDust"
+    website="https://broskullemoji.exhq.dev"
     id="386719709472751616"
     opinion="I literally don't know anything about you from the two months I've known you"
   />
   <Person
     name="lucysim"
     id="307316554805018624"
+    website="https://broskullemoji.exhq.dev/"
     opinion="AAAAAAAAAAjshjfmnfjkf hsuawhendushjsf :3"
   />
-  <Person name="Arxien" id="159467031169597440" opinion='"one dollar"' />
+  <Person name="Arxien" website="https://broskullemoji.exhq.dev/" id="159467031169597440" opinion='"one dollar"' />
 </div>
 
 <style>

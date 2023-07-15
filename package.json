@@ -1,5 +1,5 @@
 {
-  "name": "exhq.dev",
+  "name": "neqqie.com",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -12,8 +12,5 @@
     "@sveltejs/vite-plugin-svelte": "^2.0.4",
     "svelte": "^3.58.0",
     "vite": "^4.3.9"
-  },
-  "dependencies": {
-    "svelte-routing": "^1.11.0"
   }
 }

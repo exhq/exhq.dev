@@ -3,10 +3,6 @@
     export let id = ""
     export let opinion = ""
     export let website = ""
-  function redir(){
-    window.location.href = website;
-  }
-
 </script>
 
 <div class="item">

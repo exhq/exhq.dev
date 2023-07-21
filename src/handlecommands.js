@@ -58,3 +58,8 @@ registerCommand("help", ()=>{
     return "figure it out bitchass"
 })
 
+registerCommand("music", ()=>{
+    var audio = new Audio("./fumo.mp3")
+    audio.play();
+    return "i will shove a flandre fumo up your ass"
+})

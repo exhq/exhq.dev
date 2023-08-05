@@ -81,6 +81,12 @@
 
 <h1>just look at these amazing reviews!</h1>
 <div class="grid-container">
+  <Person
+    name="Light7734"
+    id="idk"
+    website="https://light7734.com/"
+    opinion="I love shitposting, for more shitposting checkout my website!"
+  />
   <Person name="vendy" website="https://vendicated.dev" id="343383572805058560" opinion="gay" />
   <Person name="nea" website="https://nea.moe" id="310702108997320705" opinion="why is it so small?" />
   <Person

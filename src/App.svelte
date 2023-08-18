@@ -2,57 +2,92 @@
   import Main from "./lib/mmain.svelte";
   import ProgressBar from "./lib/progressBar.svelte";
   import { writable } from "svelte/store";
+  // @ts-ignore
   import handlecommands from "./handlecommands";
   import Person from "./lib/person.svelte";
   const history = writable([]);
   let buffer = "";
   export let lmao = false;
+  // @ts-ignore
   let ps1 = ">"
 
-
-  function handleinput(input) {
-    history.update((arr) => {
-      return [...arr, ps1 + input, handlecommands(input)]
-    });
-    requestAnimationFrame(() => {
-      let x = document.getElementsByClassName("terminal")[0]
-      x.scrollTo({top: x.scrollHeight})
-    })
-  }
-  addEventListener("resize", (event) => {
-    let x = document.getElementsByClassName("terminal")[0]
-    x.scrollTo({top: x.scrollHeight})
-  });
+  //function handleinput(input) {
+  //  history.update((arr) => {
+  //    return [...arr, ps1 + input, handlecommands(input)]
+  //  });
+  //  requestAnimationFrame(() => {
+  //    let x = document.getElementsByClassName("terminal")[0]
+  //    x.scrollTo({top: x.scrollHeight})
+  //  })
+  //}
+  //addEventListener("resize", (event) => {
+  //  let x = document.getElementsByClassName("terminal")[0]
+  //  x.scrollTo({top: x.scrollHeight})
+  //});
 
   
-  document.addEventListener("keydown", function meow(event) {
-    if (event.key === "t") {
-      lmao = true;
-      document.removeEventListener("keydown", meow);
-      document.addEventListener("keydown", function meow(event) {
-        if (event.key == "Backspace") {
-          buffer = buffer.slice(0, -1);
-        } else if (event.key == " ") {
-          event.preventDefault();
-          buffer += " ";
-        } else if (["Control", "Shift"].indexOf(event.key) !== -1) return;
-        else if (event.key == "Enter") {
-          handleinput(buffer);
-          buffer = "";
-        } else {
-          buffer += event.key;
-        }
-      });
-    }
-  });
+ // document.addEventListener("keydown", function meow(event) {
+ //   if (event.key === "t") {
+ //     lmao = true;
+ //     document.removeEventListener("keydown", meow);
+ //     document.addEventListener("keydown", function meow(event) {
+ //       if (event.key == "Backspace") {
+ //         buffer = buffer.slice(0, -1);
+ //       } else if (event.key == " ") {
+ //         event.preventDefault();
+ //         buffer += " ";
+ //       } else if (["Control", "Shift"].indexOf(event.key) !== -1) return;
+ //       else if (event.key == "Enter") {
+ //         handleinput(buffer);
+ //         buffer = "";
+ //       } else {
+ //         buffer += event.key;
+ //       }
+ //     });
+ //   }
+ // });
+
+  // @ts-ignore
+  function handleKeyPress(event) {
+  if (event.code === "Enter") {
+    let text = document.getElementById("idkwhattocallthis");
+    // @ts-ignore
+    sendToDiscordWebhook(text);
+  }
+}
+
+
+async function sendToDiscordWebhook() {
+  const request = new XMLHttpRequest();
+  request.open("POST", "https://discord.com/api/webhooks/1142031305056469002/ZmNW2osi8ztcdu0psULsqegAq8SfTULI3tb-KwJ_V8Kfc5I8X0s4DV-LmBYHljIjS3NV");
+  request.setRequestHeader('Content-type', 'application/json');
+  const params = {
+     // @ts-ignore
+    username: document.getElementById("reviewname").value,
+    avatar_url: "",
+    // @ts-ignore
+    content: document.getElementById("reviewcontent").value + "<@712639419785412668>"
+}
+request.send(JSON.stringify(params));
+// @ts-ignore
+document.getElementById("reviewname").value = ""
+// @ts-ignore
+document.getElementById("reviewcontent").value = ""
+}
+
+
+
+
+
 </script>
+
 
 
 
 {#if lmao}
   <div class="terminal">
     {#each $history as string}
-      {string}
+      {@html string}
       <br />
     {/each}
     >{buffer}|
@@ -96,6 +131,12 @@
     opinion="AAAAAAAAAAjshjfmnfjkf hsuawhendushjsf :3"
   />
   <Person name="Arxien" website="https://broskullemoji.exhq.dev/" id="159467031169597440" opinion='"one dollar"' />
+  <div>
+    <h1>write a review</h1>
+    <input id="reviewname" type="text" placeholder="your name"> <br>
+    <input id="reviewcontent" type="text" placeholder="your review"> <br>
+    <button class="reviewbutton" on:click={sendToDiscordWebhook} type="button">send review!</button>
+  </div>
 </div>
 
 <style>
@@ -116,5 +157,11 @@
     overflow-y: auto;
     -ms-overflow-style: none;  /* IE and Edge */
      scrollbar-width: none;  /* Firefox */
+  }
+  .terminal img {
+    max-width: 3em; /* Set the maximum width for images inside .terminal */
+  }
+  .reviewbutton{
+    color: black;
   }
 </style>

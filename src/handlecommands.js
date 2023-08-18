@@ -55,7 +55,11 @@ registerCommand("gay", () => {
 });
 
 registerCommand("help", ()=>{
-    return "figure it out bitchass"
+    return "figure it out bitchass" 
+})
+
+registerCommand("gatito", ()=>{
+    return '<img class="pfp" src="https://cdn.discordapp.com/attachments/1091601298803150887/1133670992376516638/20230713_200851.jpg" alt="">'
 })
 
 registerCommand("music", ()=>{

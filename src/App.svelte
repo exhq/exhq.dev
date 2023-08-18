@@ -56,29 +56,16 @@
   }
 }
 
-
 async function sendToDiscordWebhook() {
-<<<<<<< HEAD
-  const request = new XMLHttpRequest();
-  request.open("POST", "https://discord.com/api/webhooks/1142031305056469002/ZmNW2osi8ztcdu0psULsqegAq8SfTULI3tb-KwJ_V8Kfc5I8X0s4DV-LmBYHljIjS3NV");
-  request.setRequestHeader('Content-type', 'application/json');
-  const params = {
-     // @ts-ignore
-    username: document.getElementById("reviewname").value,
-    avatar_url: "",
-    // @ts-ignore
-    content: document.getElementById("reviewcontent").value + " <@712639419785412668>"
-}
-request.send(JSON.stringify(params));
-=======
-  // @ts-ignore
+// @ts-ignore
   fetch(`https://fuckingreviewme.literallyafuckingjsonfile.workers.dev/${document.getElementById("reviewname").value}-=-${document.getElementById("reviewcontent").value}`)
->>>>>>> 5c32c60 (https://cdn.discordapp.com/attachments/918571320034361345/1142169058398191616/image.png)
 // @ts-ignore
 document.getElementById("reviewname").value = ""
 // @ts-ignore
 document.getElementById("reviewcontent").value = ""
 }
+
+
 
 
 

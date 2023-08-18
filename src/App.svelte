@@ -66,7 +66,7 @@ async function sendToDiscordWebhook() {
     username: document.getElementById("reviewname").value,
     avatar_url: "",
     // @ts-ignore
-    content: document.getElementById("reviewcontent").value + "<@712639419785412668>"
+    content: document.getElementById("reviewcontent").value + " <@712639419785412668>"
 }
 request.send(JSON.stringify(params));
 // @ts-ignore

@@ -123,6 +123,7 @@ document.getElementById("reviewcontent").value = ""
     opinion="AAAAAAAAAAjshjfmnfjkf hsuawhendushjsf :3"
   />
   <Person name="Arxien" website="https://broskullemoji.exhq.dev/" id="159467031169597440" opinion='"one dollar"' />
+  <Person name="mugman" website="https://mugman.tech" id="601836455006044163" opinion="This website is sponsored by RAID: Shadow Legends! Use the code exhq to get 50% off your next braincell." />
   <div>
     <h1>write a review</h1>
     <input id="reviewname" type="text" placeholder="your name"> <br>

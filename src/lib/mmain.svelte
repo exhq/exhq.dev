@@ -34,6 +34,7 @@
       updateName(i);
     }, (name.length - i) * 100); // Delay in milliseconds
   }
+  
   // Execute the following code after the setTimeout iterations complete
   setTimeout(() => {
     let buffer = getRandomChild(names);
@@ -59,7 +60,7 @@
   <div>
     <div class="logocontainer">
       <img
-        src="https://dp.nea.moe/avatar/712639419785412668.png"
+        src="https://adu.shiggy.fun/v1/712639419785412668/avatar"
         class="logo"
         alt="mah sdfghijsjhdf"
       />

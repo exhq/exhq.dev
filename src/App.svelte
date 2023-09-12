@@ -11,41 +11,44 @@
   // @ts-ignore
   let ps1 = ">"
 
-  //function handleinput(input) {
-  //  history.update((arr) => {
-  //    return [...arr, ps1 + input, handlecommands(input)]
-  //  });
-  //  requestAnimationFrame(() => {
-  //    let x = document.getElementsByClassName("terminal")[0]
-  //    x.scrollTo({top: x.scrollHeight})
-  //  })
-  //}
-  //addEventListener("resize", (event) => {
-  //  let x = document.getElementsByClassName("terminal")[0]
-  //  x.scrollTo({top: x.scrollHeight})
-  //});
+  function handleinput(input) {
+   history.update((arr) => {
+     return [...arr, ps1 + input, handlecommands(input)]
+   });
+   requestAnimationFrame(() => {
+     let x = document.getElementsByClassName("terminal")[0]
+     x.scrollTo({top: x.scrollHeight})
+   })
+  }
+  addEventListener("resize", (event) => {
+   let x = document.getElementsByClassName("terminal")[0]
+   x.scrollTo({top: x.scrollHeight})
+  });
 
   
- // document.addEventListener("keydown", function meow(event) {
- //   if (event.key === "t") {
- //     lmao = true;
- //     document.removeEventListener("keydown", meow);
- //     document.addEventListener("keydown", function meow(event) {
- //       if (event.key == "Backspace") {
- //         buffer = buffer.slice(0, -1);
- //       } else if (event.key == " ") {
- //         event.preventDefault();
- //         buffer += " ";
- //       } else if (["Control", "Shift"].indexOf(event.key) !== -1) return;
- //       else if (event.key == "Enter") {
- //         handleinput(buffer);
- //         buffer = "";
- //       } else {
- //         buffer += event.key;
- //       }
- //     });
- //   }
- // });
+ document.addEventListener("keydown", function meow(event) {
+   if (event.key === "t") {
+     for (const el of document.querySelectorAll("input")) { // might be a performance issue moment but shrug -Erik
+       if (document.activeElement == el) return;
+     };
+     lmao = true;
+     document.removeEventListener("keydown", meow);
+     document.addEventListener("keydown", function meow(event) {
+       if (event.key == "Backspace") {
+         buffer = buffer.slice(0, -1);
+       } else if (event.key == " ") {
+         event.preventDefault();
+         buffer += " ";
+       } else if (["Control", "Shift"].indexOf(event.key) !== -1) return;
+       else if (event.key == "Enter") {
+         handleinput(buffer);
+         buffer = "";
+       } else {
+         buffer += event.key;
+       }
+     });
+   }
+ });
 
   // @ts-ignore
   function handleKeyPress(event) {

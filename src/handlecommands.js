@@ -21,11 +21,12 @@ class File {
   class Directory {
 
     getPath() {
-        if (this.parent === null) {
-          return '/';
-        }
-        return this.parent.getPath() + '/' + this.name;
+      if (this.parent === null) {
+        return '/';
       }
+      const parentPath = this.parent.getPath();
+      return parentPath === '/' ? `/${this.name}` : `${parentPath}/${this.name}`;
+  }
 
     listFilesAndDirectories() {
         return [...this.children.keys()];
@@ -145,11 +146,10 @@ class File {
   }
   
   const fs = new FileSystem();
-  fs.createFile('/documents/file.txt', 'Hello, World!');
-  fs.createDirectory('/documents/folder');
-  fs.changeDirectory('/documents');
-  fs.createFile('file2.txt', 'Another file content');
-
+  fs.createDirectory("/home")
+  fs.createDirectory("/home/exhq")
+  fs.changeDirectory("/home/exhq")
+  fs.createFile("/home/exhq/secret", "i like gay sex")
 function registerCommand(commandName, handler) {
     commands[commandName] = handler;
 }
@@ -161,18 +161,19 @@ export default function handleCommands(input) {
     try {
         return commands[command](args);
     } catch (e) {
-        if (e instanceof TypeError) {
-            return "unknown command"
-        } else {
-            return "some horrible shit happened, contact echo"
-        }
-
+        return e
     }
 }
 
-registerCommand("cd", (args)=>{
-    return fs.changeDirectory(fs.currentDirectory)
-})
+registerCommand("cd", (args) => {
+  if (args.length > 0) {
+      fs.changeDirectory(args[0]);
+      return `Changed directory to: ${fs.pwd()}`;
+  } else {
+      return "Usage: cd <directory>";
+  }
+});
+
 
 registerCommand("add", (args) => {
     return (+args[0]) + (+args[1])
@@ -182,9 +183,59 @@ registerCommand("among", () =>{
     return "SUS!!!!!!! AMONGG ussss!!1 idk"
 })
 
-registerCommand("ls", () =>{
-    return fs.currentDirectory.listChildren().toString().replace(",", "<br>")
-})
+registerCommand("cat", (args) => {
+  if (args.length !== 1) {
+      return "Usage: cat <file_path>";
+  }
+
+  const filePath = fs.pwd()+"/"+args[0];
+  
+  const fileContent = fs.readFile(filePath);
+
+  if (fileContent !== null) {
+      return fileContent;
+  } else {
+      return `File ${filePath} not found.`;
+  }
+});
+
+
+registerCommand("append", (args) => {
+  if (args.length < 2) {
+      return "Usage: append <file_path> <text_to_add>";
+  }
+
+  const filePath = fs.pwd() + "/" + args[0];
+  const textToAdd = args.slice(1).join(' ');
+  const existingContent = fs.readFile(filePath);
+
+  if (existingContent !== null) {
+      const updatedContent = existingContent + '\n' + textToAdd;
+      fs.createFile(filePath, updatedContent);
+
+      return `Text added to ${filePath}.`;
+  } else {
+      return `File ${filePath} not found.`;
+  }
+});
+
+
+registerCommand("ls", () => {
+  const currentDir = fs.currentDirectory;
+  const children = currentDir.listFilesAndDirectories();
+  const listings = [];
+
+  for (const child of children) {
+      const childObj = currentDir.getChild(child);
+      const type = childObj instanceof Directory ? "directory" : "file";
+      listings.push(`${child} (${type})`);
+  }
+
+  return listings.join('<br> ');
+});
+
+
+
 
 registerCommand("pwd", ()=> {
     return fs.pwd()
@@ -220,9 +271,14 @@ registerCommand("help", ()=>{
     return "figure it out bitchass" 
 })
 
-registerCommand("gatito", ()=>{
-    return '<img class="pfp" src="https://cdn.discordapp.com/attachments/1091601298803150887/1133670992376516638/20230713_200851.jpg" alt="">'
-})
+registerCommand("gatito", () => {
+  const imageSrc = "https://cdn.discordapp.com/attachments/1091601298803150887/1133670992376516638/20230713_200851.jpg";
+  
+  const imageHtml = `<div style="max-width: 20wpx;"><img class="pfp" src="${imageSrc}" alt=""></div>`;
+  
+  return imageHtml;
+});
+
 
 registerCommand("music", ()=>{
     var audio = new Audio("./fumo.mp3")

@@ -1,16 +1,14 @@
-<script>
+<script async>
   import Main from "./lib/mmain.svelte";
   import ProgressBar from "./lib/progressBar.svelte";
   import { writable } from "svelte/store";
-  // @ts-ignore
   import handlecommands from "./handlecommands";
   import Person from "./lib/person.svelte";
+    import { onMount } from "svelte";
   const history = writable([]);
   let buffer = "";
   export let lmao = false;
-  // @ts-ignore
   let ps1 = ">"
-
 
 
 
@@ -26,7 +24,7 @@
   }
   addEventListener("resize", (event) => {
    let x = document.getElementsByClassName("terminal")[0]
-   x.scrollTo({top: x.scrollHeight})
+   //x.scrollTo({top: x.scrollHeight})
   });
 
   
@@ -63,23 +61,47 @@
   }
 }
 
-async function sendToDiscordWebhook() {
-// @ts-ignore
-  fetch(`https://fuckingreviewme.literallyafuckingjsonfile.workers.dev/${document.getElementById("reviewname").value}-=-${document.getElementById("reviewcontent").value}`)
-// @ts-ignore
-document.getElementById("reviewname").value = ""
-// @ts-ignore
-document.getElementById("reviewcontent").value = ""
+
+
+
+
+async function getLatestItems(apiUrl) {
+  try {
+    const response = await fetch(apiUrl);
+    if (!response.ok) {
+      throw new Error(`API call failed with status ${response.status}`);
+    }
+    const data = await response.json();
+    // Check if data is an array
+    if (!Array.isArray(data)) {
+      throw new Error('API response is not an array');
+    }
+    // Slice the last 5 items
+    const lastFive = data.slice(-5);
+    // Print or use the lastFive array as needed
+    return lastFive;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
 }
 
+let kys = writable([]);
 
+// Assuming getLatestItems returns a promise that resolves to an array
+async function fetchKys() {
+    try {
+        const data = await getLatestItems("https://review.exhq.dev/getreviews");
+        kys.set(data); // Update the value of kys
+    } catch (error) {
+        console.error("Error:", error);
+    }
+}
 
-
-
+// Call fetchKys when the component is mounted
+onMount(fetchKys);
 
 
 </script>
-
 
 
 
@@ -115,29 +137,16 @@ document.getElementById("reviewcontent").value = ""
 
 <h1>just look at these amazing reviews!</h1>
 <div class="grid-container">
-  <Person name="vendy" website="https://vendicated.dev" id="343383572805058560" opinion="gay" />
-  <Person name="nea" website="https://nea.moe" id="310702108997320705" opinion="why is it so small?" />
-  <Person
-    name="SlightDust"
-    website="https://broskullemoji.exhq.dev"
-    id="386719709472751616"
-    opinion="I literally don't know anything about you from the two months I've known you"
+{#each $kys as item}
+    <!-- Render each item -->
+    <Person
+    id={item.discordID}
+    opinion={item.reviewText}
   />
-  <Person
-    name="lucysim"
-    id="307316554805018624"
-    website="https://broskullemoji.exhq.dev/"
-    opinion="AAAAAAAAAAjshjfmnfjkf hsuawhendushjsf :3"
-  />
-  <Person name="Arxien" website="https://broskullemoji.exhq.dev/" id="159467031169597440" opinion='"one dollar"' />
-  <Person name="mugman" website="https://mugman.tech" id="601836455006044163" opinion="This website is sponsored by RAID: Shadow Legends! Use the code exhq to get 50% off your next braincell." />
-  <div>
-    <h1>write a review</h1>
-    <input id="reviewname" type="text" placeholder="your name"> <br>
-    <input id="reviewcontent" type="text" placeholder="your review"> <br>
-    <button class="reviewbutton" on:click={sendToDiscordWebhook} type="button">send review!</button>
-  </div>
+{/each}
 </div>
+<!-- svelte-ignore a11y-invalid-attribute -->
+<a href="https://discord.com/oauth2/authorize?client_id=1208380910525743134&response_type=token&redirect_uri=https%3A%2F%2Freview.exhq.dev%2F&scope=identify">send your shitty ass reviews here, fuck you kas</a>
 
 <style>
   .grid-container {
@@ -157,11 +166,5 @@ document.getElementById("reviewcontent").value = ""
     overflow-y: auto;
     -ms-overflow-style: none;  /* IE and Edge */
      scrollbar-width: none;  /* Firefox */
-  }
-  .terminal img {
-    max-width: 3em; /* Set the maximum width for images inside .terminal */
-  }
-  .reviewbutton{
-    color: black;
   }
 </style>

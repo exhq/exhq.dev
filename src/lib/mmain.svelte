@@ -88,13 +88,6 @@
       alt=""
     />
   </a>
-  <a href="https://github.com/exhq" data-text="exhq">
-    <img
-      class="infologos"
-      src="https://cdn.discordapp.com/attachments/1026504914131759104/1125801730043547778/tMUQol8.svg"
-      alt=""
-    />
-  </a>
 </div>
 
 <div class="page1" />

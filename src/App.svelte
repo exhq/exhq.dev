@@ -90,7 +90,7 @@ let kys = writable([]);
 // Assuming getLatestItems returns a promise that resolves to an array
 async function fetchKys() {
     try {
-        const data = await getLatestItems("https://review.exhq.dev/getreviews");
+        const data = await getLatestItems("https://api.review.exhq.dev/getreviews");
         kys.set(data); // Update the value of kys
     } catch (error) {
         console.error("Error:", error);
